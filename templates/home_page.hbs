@@ -1,0 +1,290 @@
+{{!-- Welcome --}}
+<section class="section welcome">
+  <h1 class="h1 welcome__title">
+    {{#is settings.welcome_title '-'}}
+      {{#is help_center.locale 'en-us'}}Hey, how can we help?{{/is}}
+      {{#is help_center.locale 'nl'}}Hey, hoe kunnen we je helpen?{{/is}}
+      {{#is help_center.locale 'fr'}}Hé, comment pouvons-nous vous aider?{{/is}}
+      {{#is help_center.locale 'de-de'}}Hey, wie können wir Ihnen helfen?{{/is}}
+      {{#is help_center.locale 'de'}}Hey, wie können wir Dir helfen?{{/is}}
+    {{else}}
+      {{#if settings.translations_enable}}
+        {{dc settings.welcome_title}}
+      {{else}}
+        {{settings.welcome_title}}
+      {{/if}}
+    {{/is}}
+  </h1>
+  <p class="welcome__subtitle">
+    {{#is settings.welcome_subtitle '-'}}
+      {{#is help_center.locale 'en-us'}}Hey, how can we help?{{/is}}
+      {{#is help_center.locale 'nl'}}Hey, hoe kunnen we je helpen?{{/is}}
+      {{#is help_center.locale 'fr'}}Hé, comment pouvons-nous vous aider?{{/is}}
+      {{#is help_center.locale 'de-de'}}Hey, wie können wir Ihnen helfen?{{/is}}
+      {{#is help_center.locale 'de'}}Hey, wie können wir Dir helfen?{{/is}}
+    {{else}}
+      {{#if settings.translations_enable}}
+        {{dc settings.welcome_subtitle}}
+      {{else}}
+        {{settings.welcome_subtitle}}
+      {{/if}}
+    {{/is}}
+  </p>
+</section>
+
+{{!-- Helpers --}}
+{{#if settings.show_helpers}}
+  <section class="section helpers">
+    <div class="row helpers__container">
+
+      {{#if settings.show_helper_1}}
+        <div class="col-12 col-md-4">
+          <a id="helper-1" href="{{settings.helper_1_url}}" class="helpers__item" data-plugin-internal-url>
+<!--             <span class="helpers__icon>
+                <img src="{{settings.helper_1_icon}}" alt="{{settings.helper_1_title}}" data-plugin-inline-svg>
+            </span> -->
+            <span class="h3 helpers__title">
+              {{#is settings.helper_1_title '-'}}
+                FAQ
+              {{else}}
+                {{#if settings.translations_enable}}
+                  {{dc settings.helper_1_title}}
+                {{else}}
+                  {{settings.helper_1_title}}
+                {{/if}}
+              {{/is}}
+            </span>
+            <span class="helpers__description">
+              {{#is settings.helper_1_description '-'}}
+                {{#is help_center.locale 'en-us'}}Questions? Find the answer to any question.{{/is}}
+                {{#is help_center.locale 'nl'}}Heb je een vraag? Vind hier het antwoord op al je vragen.{{/is}}
+                {{#is help_center.locale 'fr'}}Vous avez une question ? Trouvez la réponse ici{{/is}}
+                {{#is help_center.locale 'de-de'}}Fragen? Hier finden Sie Antworten.{{/is}}
+                {{#is help_center.locale 'de'}}Fragen? Hier findest Du Antworten.{{/is}}
+              {{else}}
+                {{#if settings.translations_enable}}
+                  {{dc settings.helper_1_description}}
+                {{else}}
+                  {{settings.helper_1_description}}
+                {{/if}}
+              {{/is}}
+            </span>
+          </a>
+        </div>
+      {{/if}}
+
+      {{#if settings.show_helper_2}}
+        <div class="col-12 col-md-4">
+          <a id="helper-2" href="{{settings.helper_2_url}}" target="_blank" class="helpers__item" data-plugin-internal-url>
+<!--             <span class="helpers__icon">
+               <img src="{{settings.helper_2_icon}}" alt="{{settings.helper_2_title}}" data-plugin-inline-svg>
+            </span> -->
+            <span class="h3 helpers__title">
+              {{#is settings.helper_2_title '-'}}
+                {{#is help_center.locale 'en-us'}}Guides{{/is}}
+                {{#is help_center.locale 'nl'}}Handleidingen{{/is}}
+                {{#is help_center.locale 'fr'}}Manuels{{/is}}
+                {{#is help_center.locale 'de-de'}}Anleitungen{{/is}}
+                {{#is help_center.locale 'de'}}Anleitungen{{/is}}
+              {{else}}
+                {{#if settings.translations_enable}}
+                  {{dc settings.helper_2_title}}
+                {{else}}
+                  {{settings.helper_2_title}}
+                {{/if}}
+              {{/is}}
+            </span>
+            <span class="helpers__description">
+              {{#is settings.helper_2_description '-'}}
+                {{#is help_center.locale 'en-us'}}Need help? We have you covered.{{/is}}
+                {{#is help_center.locale 'nl'}}Hulp nodig? We zijn er voor je.{{/is}}
+                {{#is help_center.locale 'fr'}}Besoin d'aide? Nous sommes là pour vous.{{/is}}
+                {{#is help_center.locale 'de-de'}}Brauchen Sie Hilfe? Wir kümmern uns um Sie.{{/is}}
+                {{#is help_center.locale 'de'}}Brauchst Du Hilfe? Wir kümmern uns um Dich.{{/is}}
+              {{else}}
+                {{#if settings.translations_enable}}
+                  {{dc settings.helper_2_description}}
+                {{else}}
+                  {{settings.helper_2_description}}
+                {{/if}}
+              {{/is}}
+            </span>
+          </a>
+        </div>
+      {{/if}}
+
+      {{#if settings.show_helper_3}}
+        <div class="col-12 col-md-4">
+          <a id="helper-4" href="javascript:void(0);" onclick="zE('messenger', 'open');" class="helpers__item" data-plugin-internal-url>
+<!--             <span class="helpers__icon">
+               <img src="{{settings.helper_3_icon}}" alt="{{settings.helper_3_title}}" data-plugin-inline-svg>
+            </span> -->
+            <span class="h3 helpers__title">
+              {{#is settings.helper_3_title '-'}}
+                {{#is help_center.locale 'en-us'}}Submit a request{{/is}}
+                {{#is help_center.locale 'nl'}}Verstuur een aanvraag{{/is}}
+                {{#is help_center.locale 'fr'}}Envoyez une demande{{/is}}
+                {{#is help_center.locale 'de-de'}}Anfrage einreichen{{/is}}
+                {{#is help_center.locale 'de'}}Anfrage einreichen{{/is}}
+              {{else}}
+                {{#if settings.translations_enable}}
+                  {{dc settings.helper_3_title}}
+                {{else}}
+                  {{settings.helper_3_title}}
+                {{/if}}
+              {{/is}}
+            </span>
+            <span class="helpers__description">
+              {{#is settings.helper_3_description '-'}}
+                {{#is help_center.locale 'en-us'}}Contact us through a specially prepared form.{{/is}}
+                {{#is help_center.locale 'nl'}}Contacteer ons via een formulier{{/is}}
+                {{#is help_center.locale 'fr'}}Contactez-nous via le formulaire{{/is}}
+                {{#is help_center.locale 'de-de'}}Kontaktieren Sie uns über das Anfrageformular.{{/is}}
+                {{#is help_center.locale 'de'}}Nimm Kontakt über unser Anfrageformular auf.{{/is}}
+              {{else}}
+                {{#if settings.translations_enable}}
+                  {{dc settings.helper_3_description}}
+                {{else}}
+                  {{settings.helper_3_description}}
+                {{/if}}
+              {{/is}}
+            </span>
+          </a>
+        </div>
+      {{/if}}
+
+    </div>
+  </section>
+{{/if}}
+
+{{!-- Promoted articles --}}
+{{#if settings.show_promoted}}
+  <section class="section recent-activities">
+<!--     <h2 class="section__title">{{t 'promoted_articles'}}</h2> -->
+    <div class="row">
+      {{#each promoted_articles}}
+        <div class="col-12 col-md-6">
+          <a class="promoted__link" href="{{url}}">→ {{title}}</a>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+{{/if}}
+
+
+
+{{!-- Category list --}}
+{{#if settings.show_category_list}}
+  <section class="section category-list">
+    <h2 class="section__title">{{t 'knowledge_base'}}</h2>
+    <div class="row">
+      {{#each categories}}
+        <div class="col-12 col-md-6 col-lg-3">
+          <a href="{{url}}" class="category-list__item">
+            <span class="h3 category-list__title">{{name}}</span>
+            {{#if description}}
+              <span class="category-list__description">{{description}}</span>
+            {{/if}}
+          </a>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+{{/if}}
+
+{{!-- Category tree --}}
+{{#if settings.show_category_tree}}
+  <section class="section category-tree">
+
+    {{!-- Categories --}}
+    {{#each categories}}
+      <div class="category-tree__item" data-plugin-spoiler='{"open": {{#if @index}}false{{else}}true{{/if}} }'>
+        <a class="category-tree__heading h2 js-spoiler-toggle" role="button" tabindex="0">
+          <span>
+            <p>{{name}}</p>
+            <p class="category-tree__description">{{description}}</p>
+          </span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="category-tree__content js-spoiler" aria-hidden="true">
+
+          {{!-- Sections --}}
+          {{#if sections}}
+            <div class="row">
+              {{#each sections}}
+                <div class="col-12 col-md-6">
+                  <div class="category-tree__section">
+                    <div class="category-tree__section-icon">
+                      <i class="fas fa-book"></i>
+                    </div>
+                    <div>
+                      <a href="{{url}}" class="h3 category-tree__section-name">{{name}}</a>
+                      <span class="category-tree__section-description">{{description}} <span>{{t 'articles'}}: {{articles.length}}</span></span>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          {{/if}}
+
+        </div>
+      </div>
+    {{/each}}
+  </section>
+{{/if}}
+
+{{!-- Recent activities --}}
+{{#if settings.show_recent_activities}}
+  <section class="section recent-activities"
+    {{#if settings.translations_enable}}
+           data-plugin-activities='{"buttonText": "{{dc settings.recent_activities_button}}"}'
+    {{else}}
+           data-plugin-activities='{"buttonText": "{{settings.recent_activities_button}}"}'
+    {{/if}}
+  >
+    {{recent_activity}}
+  </section>
+{{/if}}
+
+{{!-- CTA --}}
+{{#if settings.show_cta}}
+  <section class="section cta">
+    <div class="cta__container">
+      <div class="cta__content">
+        <h2 class="cta__title">
+          {{#is settings.cta_title '-'}}
+            {{#is help_center.locale 'en-us'}}Can't find what you're looking for?{{/is}}
+            {{#is help_center.locale 'nl'}}Vind je niet wat je zoekt?{{/is}}
+            {{#is help_center.locale 'fr'}}Vous ne trouvez pas ce que vous cherchez?{{/is}}
+            {{#is help_center.locale 'de-de'}}Finden Sie nicht, wonach Sie suchen?{{/is}}
+            {{#is help_center.locale 'de'}}Findest Du nicht, wonach Du suchst?{{/is}}
+          {{else}}
+            {{#if settings.translations_enable}}
+              {{dc settings.cta_title}}
+            {{else}}
+              {{settings.cta_title}}
+            {{/if}}
+          {{/is}}
+        </h2>
+        <div class="cta__subtitle">
+          {{#is settings.cta_subtitle '-'}}
+            {{#is help_center.locale 'en-us'}}Our customer care team is here for you!{{/is}}
+            {{#is help_center.locale 'nl'}}Onze klantendienst staat voor je klaar!{{/is}}
+            {{#is help_center.locale 'fr'}}Notre service clientèle est à votre disposition!{{/is}}
+            {{#is help_center.locale 'de-de'}}Unser Kundenteam ist für Sie da!{{/is}}
+            {{#is help_center.locale 'de'}}Unser Kundenteam ist für Dich da!{{/is}}
+          {{else}}
+            {{#if settings.translations_enable}}
+              {{dc settings.cta_subtitle}}
+            {{else}}
+              {{settings.cta_subtitle}}
+            {{/if}}
+          {{/is}}
+        </div>
+        <a href="/hc/requests/new" class="btn cta__btn">
+          {{t 'submit_a_request'}}
+        </a>
+      </div>
+    </div>
+  </section>
+{{/if}}

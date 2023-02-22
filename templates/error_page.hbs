@@ -1,0 +1,27 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+  <h1 class="section__title section__title--left">{{t 'oops'}}</h1>
+</section>
+
+{{!-- Content--}}
+<section class="inner-page">
+  <div id="main-content" class="error-page">
+
+    {{#is error 'unauthorized'}}
+      <h3>{{link 'sign_in'}}</h3>
+    {{/is}}
+
+    {{#is error 'forbidden'}}
+      <h3>{{t 'not_authorized'}}</h3>
+    {{/is}}
+
+    {{#is error 'not_found'}}
+      <h3>{{t 'nonexistent_page'}}</h3>
+      <p>{{t 'mistyped_address_or_moved_page'}}</p>
+    {{/is}}
+
+    {{#link 'help_center'}}
+      {{t 'back_to_homepage'}}
+    {{/link}}
+  </div>
+</section>

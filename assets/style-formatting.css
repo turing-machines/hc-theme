@@ -1,0 +1,1092 @@
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+*/
+[data-plugin-formatting] {
+  /*
+
+    Callouts
+
+   */
+  /*
+
+    Quotes
+
+   */
+  /*
+
+    Lists
+
+   */
+  /* Table */
+  /* Tabs */
+  /* Accordions */
+}
+
+[data-plugin-formatting] .callout {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+[dir] [data-plugin-formatting] .callout {
+  border-radius: var(--border-radius-small, 8px);
+  border: 0 solid var(--primary-text-color, #000c20);
+  padding: 12px;
+}
+
+@media (min-width: 768px) {
+  [dir] [data-plugin-formatting] .callout {
+    padding: 24px;
+  }
+}
+
+[data-plugin-formatting] .callout::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+[dir] [data-plugin-formatting] .callout::before {
+  background-color: var(--secondary-bg-color, #f1f4fa);
+}
+
+[dir=ltr] [data-plugin-formatting] .callout::before {
+  left: 0;
+}
+
+[dir=rtl] [data-plugin-formatting] .callout::before {
+  right: 0;
+}
+
+[dir] [data-plugin-formatting] .callout h1,
+[dir] [data-plugin-formatting] .callout h2,
+[dir] [data-plugin-formatting] .callout h3,
+[dir] [data-plugin-formatting] .callout h4,
+[dir] [data-plugin-formatting] .callout h5,
+[dir] [data-plugin-formatting] .callout h6 {
+  margin: 0;
+}
+
+[dir] [data-plugin-formatting] .callout > *:first-child {
+  margin-top: 0;
+}
+
+[dir] [data-plugin-formatting] .callout > *:last-child {
+  margin-bottom: 0;
+}
+
+[data-plugin-formatting] .callout--style-gray {
+  color: var(--secondary-text-color, #8290a8);
+}
+
+[dir] [data-plugin-formatting] .callout--style-gray {
+  border-color: var(--border-color, #dde2eb);
+}
+
+[dir] [data-plugin-formatting] .callout--style-gray::before {
+  background-color: var(--secondary-bg-color, #f1f4fa);
+}
+
+[data-plugin-formatting] .callout--style-primary {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .callout--style-primary {
+  border-color: var(--primary-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .callout--style-primary::before {
+  background-color: var(--primary-color, #1863bc);
+}
+
+[data-plugin-formatting] .callout--style-secondary {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .callout--style-secondary {
+  border-color: var(--secondary-color, #6dbc1d);
+}
+
+[dir] [data-plugin-formatting] .callout--style-secondary::before {
+  background-color: var(--secondary-color, #6dbc1d);
+}
+
+[data-plugin-formatting] .callout--style-success {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .callout--style-success {
+  border-color: var(--success-color, #67c30b);
+}
+
+[dir] [data-plugin-formatting] .callout--style-success::before {
+  background-color: var(--success-color, #67c30b);
+}
+
+[data-plugin-formatting] .callout--style-info {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .callout--style-info {
+  border-color: var(--info-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .callout--style-info::before {
+  background-color: var(--info-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .callout--style-warning {
+  border-color: var(--warning-color, #f1d52f);
+}
+
+[dir] [data-plugin-formatting] .callout--style-warning::before {
+  background-color: var(--warning-color, #f1d52f);
+}
+
+[data-plugin-formatting] .callout--style-danger {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .callout--style-danger {
+  border-color: var(--danger-color, #e64545);
+}
+
+[dir] [data-plugin-formatting] .callout--style-danger::before {
+  background-color: var(--danger-color, #e64545);
+}
+
+[dir] [data-plugin-formatting] .callout--type-2,
+[dir] [data-plugin-formatting] .callout--type-4,
+[dir] [data-plugin-formatting] .callout--type-5,
+[dir] [data-plugin-formatting] .callout--type-6 {
+  border-width: var(--bordr-width);
+}
+
+[data-plugin-formatting] .callout--type-2::before,
+[data-plugin-formatting] .callout--type-4::before,
+[data-plugin-formatting] .callout--type-5::before,
+[data-plugin-formatting] .callout--type-6::before {
+  opacity: .5;
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-primary::before,
+[data-plugin-formatting] .callout--type-2.callout--style-secondary::before,
+[data-plugin-formatting] .callout--type-2.callout--style-info::before,
+[data-plugin-formatting] .callout--type-2.callout--style-success::before,
+[data-plugin-formatting] .callout--type-2.callout--style-warning::before,
+[data-plugin-formatting] .callout--type-2.callout--style-danger::before,
+[data-plugin-formatting] .callout--type-4.callout--style-primary::before,
+[data-plugin-formatting] .callout--type-4.callout--style-secondary::before,
+[data-plugin-formatting] .callout--type-4.callout--style-info::before,
+[data-plugin-formatting] .callout--type-4.callout--style-success::before,
+[data-plugin-formatting] .callout--type-4.callout--style-warning::before,
+[data-plugin-formatting] .callout--type-4.callout--style-danger::before,
+[data-plugin-formatting] .callout--type-5.callout--style-primary::before,
+[data-plugin-formatting] .callout--type-5.callout--style-secondary::before,
+[data-plugin-formatting] .callout--type-5.callout--style-info::before,
+[data-plugin-formatting] .callout--type-5.callout--style-success::before,
+[data-plugin-formatting] .callout--type-5.callout--style-warning::before,
+[data-plugin-formatting] .callout--type-5.callout--style-danger::before,
+[data-plugin-formatting] .callout--type-6.callout--style-primary::before,
+[data-plugin-formatting] .callout--type-6.callout--style-secondary::before,
+[data-plugin-formatting] .callout--type-6.callout--style-info::before,
+[data-plugin-formatting] .callout--type-6.callout--style-success::before,
+[data-plugin-formatting] .callout--type-6.callout--style-warning::before,
+[data-plugin-formatting] .callout--type-6.callout--style-danger::before {
+  opacity: .15;
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-gray,
+[data-plugin-formatting] .callout--type-4.callout--style-gray,
+[data-plugin-formatting] .callout--type-5.callout--style-gray,
+[data-plugin-formatting] .callout--type-6.callout--style-gray {
+  color: var(--secondary-text-color, #8290a8);
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-primary,
+[data-plugin-formatting] .callout--type-4.callout--style-primary,
+[data-plugin-formatting] .callout--type-5.callout--style-primary,
+[data-plugin-formatting] .callout--type-6.callout--style-primary {
+  color: var(--primary-color, #1863bc);
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-secondary,
+[data-plugin-formatting] .callout--type-4.callout--style-secondary,
+[data-plugin-formatting] .callout--type-5.callout--style-secondary,
+[data-plugin-formatting] .callout--type-6.callout--style-secondary {
+  color: var(--secondary-color, #6dbc1d);
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-info,
+[data-plugin-formatting] .callout--type-4.callout--style-info,
+[data-plugin-formatting] .callout--type-5.callout--style-info,
+[data-plugin-formatting] .callout--type-6.callout--style-info {
+  color: var(--info-color, #1863bc);
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-success,
+[data-plugin-formatting] .callout--type-4.callout--style-success,
+[data-plugin-formatting] .callout--type-5.callout--style-success,
+[data-plugin-formatting] .callout--type-6.callout--style-success {
+  color: var(--success-color, #67c30b);
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-warning,
+[data-plugin-formatting] .callout--type-4.callout--style-warning,
+[data-plugin-formatting] .callout--type-5.callout--style-warning,
+[data-plugin-formatting] .callout--type-6.callout--style-warning {
+  color: var(--warning-color, #f1d52f);
+}
+
+[data-plugin-formatting] .callout--type-2.callout--style-danger,
+[data-plugin-formatting] .callout--type-4.callout--style-danger,
+[data-plugin-formatting] .callout--type-5.callout--style-danger,
+[data-plugin-formatting] .callout--type-6.callout--style-danger {
+  color: var(--danger-color, #e64545);
+}
+
+[data-plugin-formatting] .callout--type-3 {
+  color: var(--primary-text-color, #000c20);
+}
+
+[dir=ltr] [data-plugin-formatting] .callout--type-3 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-width: 0 0 0 8px;
+  padding: 8px 0 8px 12px;
+}
+
+[dir=rtl] [data-plugin-formatting] .callout--type-3 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-width: 0 8px 0 0;
+  padding: 8px 12px 8px 0;
+}
+
+@media (min-width: 768px) {
+  [dir=ltr] [data-plugin-formatting] .callout--type-3 {
+    padding: 8px 0 8px 24px;
+  }
+
+  [dir=rtl] [data-plugin-formatting] .callout--type-3 {
+    padding: 8px 24px 8px 0;
+  }
+}
+
+[data-plugin-formatting] .callout--type-3::before {
+  display: none;
+}
+
+[dir=ltr] [data-plugin-formatting] .callout--type-4 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-width: 0 0 0 8px;
+}
+
+[dir=rtl] [data-plugin-formatting] .callout--type-4 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-width: 0 8px 0 0;
+}
+
+[dir] [data-plugin-formatting] .callout--type-5 {
+  box-shadow: 0px 0px 15px rgba(233, 235, 243, 0.8);
+}
+
+[data-plugin-formatting] .callout--type-5::before {
+  display: none;
+}
+
+[dir] [data-plugin-formatting] .callout--type-6 {
+  border-style: dashed;
+}
+
+[data-plugin-formatting] .callout--type-6::before {
+  display: none;
+}
+
+[data-plugin-formatting] .callout--size-small {
+  font-size: var(--heading-6-font-size, calc(16px - 2px));
+}
+
+[data-plugin-formatting] .callout--size-medium {
+  font-size: var(--text-font-size, 16px);
+}
+
+[data-plugin-formatting] .callout--size-large {
+  font-size: var(--text-font-size-large, calc(16px + 2px));
+}
+
+[data-plugin-formatting] .quote {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+[dir=ltr] [data-plugin-formatting] .quote {
+  border-top-right-radius: var(--border-radius-small, 8px);
+  border-bottom-right-radius: var(--border-radius-small, 8px);
+  border-left: 8px solid var(--primary-text-color, #000c20);
+  padding: 8px 0 8px 12px;
+}
+
+[dir=rtl] [data-plugin-formatting] .quote {
+  border-top-left-radius: var(--border-radius-small, 8px);
+  border-bottom-left-radius: var(--border-radius-small, 8px);
+  border-right: 8px solid var(--primary-text-color, #000c20);
+  padding: 8px 12px 8px 0;
+}
+
+@media (min-width: 768px) {
+  [dir=ltr] [data-plugin-formatting] .quote {
+    padding: 8px 0 8px 24px;
+  }
+
+  [dir=rtl] [data-plugin-formatting] .quote {
+    padding: 8px 24px 8px 0;
+  }
+}
+
+[data-plugin-formatting] .quote::before {
+  content: "\f10e";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -8px;
+  font-size: 50px;
+  color: var(--secondary-bg-color, #f1f4fa);
+}
+
+[dir=ltr] [data-plugin-formatting] .quote::before {
+  left: 8px;
+}
+
+[dir=rtl] [data-plugin-formatting] .quote::before {
+  right: 8px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  [dir=ltr] [data-plugin-formatting] .quote::before {
+    left: 12px;
+  }
+
+  [dir=rtl] [data-plugin-formatting] .quote::before {
+    right: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  [dir=ltr] [data-plugin-formatting] .quote::before {
+    left: 16px;
+  }
+
+  [dir=rtl] [data-plugin-formatting] .quote::before {
+    right: 16px;
+  }
+}
+
+[dir] [data-plugin-formatting] .quote--style-gray {
+  border-color: var(--border-color, #dde2eb);
+}
+
+[dir] [data-plugin-formatting] .quote--style-primary {
+  border-color: var(--primary-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .quote--style-secondary {
+  border-color: var(--secondary-color, #6dbc1d);
+}
+
+[dir] [data-plugin-formatting] .quote--style-success {
+  border-color: var(--success-color, #67c30b);
+}
+
+[dir] [data-plugin-formatting] .quote--style-info {
+  border-color: var(--info-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .quote--style-warning {
+  border-color: var(--warning-color, #f1d52f);
+}
+
+[dir] [data-plugin-formatting] .quote--style-danger {
+  border-color: var(--danger-color, #e64545);
+}
+
+[dir] [data-plugin-formatting] .quote--type-2 {
+  background-color: var(--secondary-bg-color, #f1f4fa);
+  padding: 12px;
+}
+
+@media (min-width: 768px) {
+  [dir] [data-plugin-formatting] .quote--type-2 {
+    padding: 24px;
+  }
+}
+
+[data-plugin-formatting] .quote--type-2::before {
+  color: var(--primary-bg-color, #ffffff);
+}
+
+[data-plugin-formatting] .quote--size-small {
+  font-size: var(--heading-6-font-size, calc(16px - 2px));
+}
+
+[data-plugin-formatting] .quote--size-medium {
+  font-size: var(--text-font-size, 16px);
+}
+
+[data-plugin-formatting] .quote--size-large {
+  font-size: var(--text-font-size-large, calc(16px + 2px));
+}
+
+[dir=ltr] [data-plugin-formatting] .list {
+  padding-left: 0;
+}
+
+[dir=rtl] [data-plugin-formatting] .list {
+  padding-right: 0;
+}
+
+[data-plugin-formatting] .list li {
+  display: block;
+  list-style: none;
+  position: relative;
+}
+
+[dir=ltr] [data-plugin-formatting] .list li {
+  padding-left: 2rem;
+}
+
+[dir=rtl] [data-plugin-formatting] .list li {
+  padding-right: 2rem;
+}
+
+[data-plugin-formatting] .list li:before {
+  display: block;
+  position: absolute;
+  top: 10px;
+}
+
+[dir=ltr] [data-plugin-formatting] .list ul,
+[dir=ltr] [data-plugin-formatting] .list ol {
+  padding-left: 0;
+}
+
+[dir=rtl] [data-plugin-formatting] .list ul,
+[dir=rtl] [data-plugin-formatting] .list ol {
+  padding-right: 0;
+}
+
+[data-plugin-formatting] ul.list li:before {
+  content: '';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--primary-text-color, #000c20);
+  top: 0.75rem;
+}
+
+[dir=ltr] [data-plugin-formatting] ul.list li:before {
+  left: 12px;
+  transform: translate(-50%, -50%);
+}
+
+[dir=rtl] [data-plugin-formatting] ul.list li:before {
+  right: 12px;
+  transform: translate(50%, -50%);
+}
+
+[data-plugin-formatting] ol.list,
+[data-plugin-formatting] ol.list ol {
+  counter-reset: list;
+}
+
+[data-plugin-formatting] ol.list > li,
+[data-plugin-formatting] ol.list ol > li {
+  counter-increment: list;
+}
+
+[data-plugin-formatting] ol.list > li:before,
+[data-plugin-formatting] ol.list ol > li:before {
+  content: counter(list);
+  top: 0.8rem;
+  font-size: 1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+}
+
+[dir] [data-plugin-formatting] ol.list > li:before,
+[dir] [data-plugin-formatting] ol.list ol > li:before {
+  transform: translateY(-50%);
+  text-align: center;
+  border-radius: 50%;
+}
+
+[dir=ltr] [data-plugin-formatting] ol.list > li:before,
+[dir=ltr] [data-plugin-formatting] ol.list ol > li:before {
+  left: 0;
+}
+
+[dir=rtl] [data-plugin-formatting] ol.list > li:before,
+[dir=rtl] [data-plugin-formatting] ol.list ol > li:before {
+  right: 0;
+}
+
+[data-plugin-formatting] ul.list li:before {
+  content: "\f00c";
+  font-size: 0.8rem;
+}
+
+[data-plugin-formatting] ol.list li:before {
+  color: var(--primary-text-color, #000c20);
+  line-height: 1.5rem;
+}
+
+[dir] [data-plugin-formatting] ol.list li:before {
+  border: var(--border-width, 1px) solid currentColor;
+  background-color: transparent;
+}
+
+[data-plugin-formatting] ul.list--style-gray li:before,
+[data-plugin-formatting] ol.list--style-gray li:before {
+  color: var(--border-color, #dde2eb);
+}
+
+[data-plugin-formatting] ul.list--style-primary li:before,
+[data-plugin-formatting] ol.list--style-primary li:before {
+  color: var(--primary-color, #1863bc);
+}
+
+[data-plugin-formatting] ul.list--style-secondary li:before,
+[data-plugin-formatting] ol.list--style-secondary li:before {
+  color: var(--secondary-color, #6dbc1d);
+}
+
+[data-plugin-formatting] ul.list--style-info li:before,
+[data-plugin-formatting] ol.list--style-info li:before {
+  color: var(--info-color, #1863bc);
+}
+
+[data-plugin-formatting] ul.list--style-success li:before,
+[data-plugin-formatting] ol.list--style-success li:before {
+  color: var(--success-color, #67c30b);
+}
+
+[data-plugin-formatting] ul.list--style-warning li:before,
+[data-plugin-formatting] ol.list--style-warning li:before {
+  color: var(--warning-color, #f1d52f);
+}
+
+[data-plugin-formatting] ul.list--style-danger li:before,
+[data-plugin-formatting] ol.list--style-danger li:before {
+  color: var(--danger-color, #e64545);
+}
+
+[data-plugin-formatting] ul.list--type-2 li:before {
+  content: "\f058";
+  font-size: 1.3rem;
+}
+
+[data-plugin-formatting] ol.list--type-2 li:before {
+  color: var(--primary-bg-color, #ffffff);
+  line-height: unset;
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2 li:before {
+  border: none;
+  background-color: var(--primary-text-color, #000c20);
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2.list--style-gray li:before {
+  background-color: var(--border-color, #dde2eb);
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2.list--style-primary li:before {
+  background-color: var(--primary-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2.list--style-secondary li:before {
+  background-color: var(--secondary-color, #6dbc1d);
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2.list--style-info li:before {
+  background-color: var(--info-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2.list--style-success li:before {
+  background-color: var(--success-color, #67c30b);
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2.list--style-warning li:before {
+  background-color: var(--warning-color, #f1d52f);
+}
+
+[dir] [data-plugin-formatting] ol.list--type-2.list--style-danger li:before {
+  background-color: var(--danger-color, #e64545);
+}
+
+[data-plugin-formatting] .table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+[dir] [data-plugin-formatting] .table {
+  border: var(--border-width, 1px) solid var(--border-color, #dde2eb);
+}
+
+[dir] [data-plugin-formatting] .table td {
+  padding: 5px;
+  border: var(--border-width, 1px) solid var(--border-color, #dde2eb);
+}
+
+[data-plugin-formatting] .table thead,
+[data-plugin-formatting] .table tfoot {
+  font-weight: bold;
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .table thead,
+[dir] [data-plugin-formatting] .table tfoot {
+  background-color: var(--secondary-text-color, #8290a8);
+}
+
+[dir] [data-plugin-formatting] .table thead td,
+[dir] [data-plugin-formatting] .table tfoot td {
+  border-color: var(--secondary-text-color, #8290a8);
+}
+
+[dir] [data-plugin-formatting] .table tbody tr:nth-child(even) {
+  background-color: var(--secondary-bg-color, #f1f4fa);
+}
+
+[data-plugin-formatting] .table--style-gray thead,
+[data-plugin-formatting] .table--style-gray tfoot {
+  color: var(--primary-text-color, #000c20);
+}
+
+[dir] [data-plugin-formatting] .table--style-gray thead,
+[dir] [data-plugin-formatting] .table--style-gray tfoot {
+  background-color: var(--border-color, #dde2eb);
+}
+
+[dir] [data-plugin-formatting] .table--style-gray thead td,
+[dir] [data-plugin-formatting] .table--style-gray tfoot td {
+  border-color: var(--border-color, #dde2eb);
+}
+
+[dir] [data-plugin-formatting] .table--style-primary thead,
+[dir] [data-plugin-formatting] .table--style-primary tfoot {
+  background-color: var(--primary-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .table--style-primary thead td,
+[dir] [data-plugin-formatting] .table--style-primary tfoot td {
+  border-color: var(--primary-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .table--style-secondary thead,
+[dir] [data-plugin-formatting] .table--style-secondary tfoot {
+  background-color: var(--secondary-color, #6dbc1d);
+}
+
+[dir] [data-plugin-formatting] .table--style-secondary thead td,
+[dir] [data-plugin-formatting] .table--style-secondary tfoot td {
+  border-color: var(--secondary-color, #6dbc1d);
+}
+
+[dir] [data-plugin-formatting] .table--style-info thead,
+[dir] [data-plugin-formatting] .table--style-info tfoot {
+  background-color: var(--info-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .table--style-info thead td,
+[dir] [data-plugin-formatting] .table--style-info tfoot td {
+  border-color: var(--info-color, #1863bc);
+}
+
+[dir] [data-plugin-formatting] .table--style-success thead,
+[dir] [data-plugin-formatting] .table--style-success tfoot {
+  background-color: var(--success-color, #67c30b);
+}
+
+[dir] [data-plugin-formatting] .table--style-success thead td,
+[dir] [data-plugin-formatting] .table--style-success tfoot td {
+  border-color: var(--success-color, #67c30b);
+}
+
+[dir] [data-plugin-formatting] .table--style-warning thead,
+[dir] [data-plugin-formatting] .table--style-warning tfoot {
+  background-color: var(--warning-color, #f1d52f);
+}
+
+[dir] [data-plugin-formatting] .table--style-warning thead td,
+[dir] [data-plugin-formatting] .table--style-warning tfoot td {
+  border-color: var(--warning-color, #f1d52f);
+}
+
+[dir] [data-plugin-formatting] .table--style-danger thead,
+[dir] [data-plugin-formatting] .table--style-danger tfoot {
+  background-color: var(--danger-color, #e64545);
+}
+
+[dir] [data-plugin-formatting] .table--style-danger thead td,
+[dir] [data-plugin-formatting] .table--style-danger tfoot td {
+  border-color: var(--danger-color, #e64545);
+}
+
+[dir] [data-plugin-formatting] .table--type-2 tbody td {
+  border: none;
+}
+
+[dir] [data-plugin-formatting] .table--type-3 tbody tr:nth-child(even) {
+  background-color: transparent;
+}
+
+[data-plugin-formatting] div.tabs {
+  overflow: hidden;
+}
+
+[data-plugin-formatting] .tabs__links {
+  display: flex;
+  overflow: hidden;
+}
+
+[data-plugin-formatting] .tabs__links a {
+  display: block;
+  flex: 1 1 10px;
+  color: var(--primary-text-color, #000c20);
+  font-weight: bold;
+}
+
+[dir] [data-plugin-formatting] .tabs__links a {
+  text-align: center;
+  padding: 12px;
+  background-color: var(--secondary-bg-color, #f1f4fa);
+  border: var(--border-width, 1px) solid var(--border-color, #dde2eb);
+}
+
+[dir=ltr] [data-plugin-formatting] .tabs__links a + a {
+  border-left: 0;
+}
+
+[dir=rtl] [data-plugin-formatting] .tabs__links a + a {
+  border-right: 0;
+}
+
+[dir=ltr] [data-plugin-formatting] .tabs__links a:first-child {
+  border-radius: var(--border-radius-base, 16px) 0 0 0;
+}
+
+[dir=rtl] [data-plugin-formatting] .tabs__links a:first-child {
+  border-radius: 0 var(--border-radius-base, 16px) 0 0;
+}
+
+[dir=ltr] [data-plugin-formatting] .tabs__links a:last-child {
+  border-radius: 0 var(--border-radius-base, 16px) 0 0;
+}
+
+[dir=rtl] [data-plugin-formatting] .tabs__links a:last-child {
+  border-radius: var(--border-radius-base, 16px) 0 0 0;
+}
+
+[data-plugin-formatting] .tabs__links a:hover {
+  color: var(--link-color, #1863bc);
+}
+
+[data-plugin-formatting] .tabs__links a.is-active {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .tabs__links a.is-active {
+  background-color: var(--primary-color, #1863bc);
+  border-color: var(--primary-color, #1863bc);
+}
+
+[data-plugin-formatting] .tabs__containers {
+  overflow: hidden;
+  position: relative;
+  transition: height 400ms cubic-bezier(0.17, 0.67, 0.54, 1);
+}
+
+[dir] [data-plugin-formatting] .tabs__containers {
+  border: var(--border-width, 1px) solid var(--border-color, #dde2eb);
+  border-radius: 0 0 var(--border-radius-base, 16px) var(--border-radius-base, 16px);
+  border-top: 0;
+}
+
+[data-plugin-formatting] .tabs__container {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: all 400ms cubic-bezier(0.17, 0.67, 0.54, 1);
+  top: 0;
+}
+
+[dir] [data-plugin-formatting] .tabs__container {
+  padding: 24px;
+}
+
+[dir=ltr] [data-plugin-formatting] .tabs__container {
+  left: 0;
+}
+
+[dir=rtl] [data-plugin-formatting] .tabs__container {
+  right: 0;
+}
+
+[data-plugin-formatting] .tabs__container.is-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+[data-plugin-formatting] .tabs--style-primary .tabs__links a {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .tabs--style-primary .tabs__links a {
+  background-color: var(--primary-color, #1863bc);
+  border-color: var(--primary-color, #1863bc);
+}
+
+[dir=ltr] [data-plugin-formatting] .tabs--style-primary .tabs__links a + a {
+  border-left: var(--border-width, 1px) solid var(--primary-color-active, #0f3f78);
+}
+
+[dir=rtl] [data-plugin-formatting] .tabs--style-primary .tabs__links a + a {
+  border-right: var(--border-width, 1px) solid var(--primary-color-active, #0f3f78);
+}
+
+[data-plugin-formatting] .tabs--style-primary .tabs__links a:hover {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .tabs--style-primary .tabs__links a:hover {
+  background-color: var(--primary-color-hover, #114686);
+  border-color: var(--primary-color-hover, #114686);
+}
+
+[data-plugin-formatting] .tabs--style-primary .tabs__links a.is-active {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .tabs--style-primary .tabs__links a.is-active {
+  background-color: var(--primary-color-active, #0f3f78);
+  border-color: var(--primary-color-active, #0f3f78);
+}
+
+[data-plugin-formatting] .tabs--style-secondary .tabs__links a {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .tabs--style-secondary .tabs__links a {
+  background-color: var(--secondary-color, #6dbc1d);
+  border-color: var(--secondary-color, #6dbc1d);
+}
+
+[dir=ltr] [data-plugin-formatting] .tabs--style-secondary .tabs__links a + a {
+  border-left: var(--border-width, 1px) solid var(--secondary-color-active, #477a13);
+}
+
+[dir=rtl] [data-plugin-formatting] .tabs--style-secondary .tabs__links a + a {
+  border-right: var(--border-width, 1px) solid var(--secondary-color-active, #477a13);
+}
+
+[data-plugin-formatting] .tabs--style-secondary .tabs__links a:hover {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .tabs--style-secondary .tabs__links a:hover {
+  background-color: var(--secondary-color-hover, #4e8715);
+  border-color: var(--secondary-color-hover, #4e8715);
+}
+
+[data-plugin-formatting] .tabs--style-secondary .tabs__links a.is-active {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] .tabs--style-secondary .tabs__links a.is-active {
+  background-color: var(--secondary-color-active, #477a13);
+  border-color: var(--secondary-color-active, #477a13);
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler {
+  margin: 0;
+}
+
+[data-plugin-formatting] div.accordion .spoiler__title {
+  display: block;
+  color: var(--primary-text-color, #000c20);
+  font-weight: bold;
+  position: relative;
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler__title {
+  background-color: var(--secondary-bg-color, #f1f4fa);
+  border: var(--border-width, 1px) solid var(--border-color, #dde2eb);
+}
+
+[dir=ltr] [data-plugin-formatting] div.accordion .spoiler__title {
+  padding: 12px 36px 12px 24px;
+}
+
+[dir=rtl] [data-plugin-formatting] div.accordion .spoiler__title {
+  padding: 12px 24px 12px 36px;
+}
+
+[data-plugin-formatting] div.accordion .spoiler__title::after {
+  content: "\f107";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 50%;
+  transition: all 400ms cubic-bezier(0.17, 0.67, 0.54, 1);
+  opacity: .3;
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler__title::after {
+  transform: translateY(-50%);
+}
+
+[dir=ltr] [data-plugin-formatting] div.accordion .spoiler__title::after {
+  right: 24px;
+}
+
+[dir=rtl] [data-plugin-formatting] div.accordion .spoiler__title::after {
+  left: 24px;
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler__title.is-active::after {
+  transform: translateY(-50%) scale(1, -1);
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler + .spoiler .spoiler__title {
+  border-top: none;
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler:first-child .spoiler__title {
+  border-radius: var(--border-radius-base, 16px) var(--border-radius-base, 16px) 0 0;
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler:last-child .spoiler__title:not(.is-active),
+[dir] [data-plugin-formatting] div.accordion .spoiler:last-child .spoiler__text {
+  border-radius: 0 0 var(--border-radius-base, 16px) var(--border-radius-base, 16px);
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler__text {
+  border: var(--border-width, 1px) solid var(--border-color, #dde2eb);
+  border-top: 0;
+  padding: 24px;
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler__text p:first-child {
+  margin-top: 0;
+}
+
+[dir] [data-plugin-formatting] div.accordion .spoiler__text p:last-child {
+  margin-bottom: 0;
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-primary .spoiler:not(:last-child) .spoiler__title {
+  border-bottom-color: var(--primary-color-active, #0f3f78);
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-primary .spoiler:not(:last-child) .spoiler__text {
+  border-bottom: 0;
+}
+
+[data-plugin-formatting] div.accordion--style-primary .spoiler__title {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-primary .spoiler__title {
+  background-color: var(--primary-color, #1863bc);
+  border-color: var(--primary-color, #1863bc);
+}
+
+[data-plugin-formatting] div.accordion--style-primary .spoiler__title:hover {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-primary .spoiler__title:hover {
+  background-color: var(--primary-color-hover, #114686);
+  border-color: var(--primary-color-hover, #114686);
+}
+
+[data-plugin-formatting] div.accordion--style-primary .spoiler__title.is-active {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-primary .spoiler__title.is-active {
+  background-color: var(--primary-color-active, #0f3f78);
+  border-color: var(--primary-color-active, #0f3f78);
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-secondary .spoiler:not(:last-child) .spoiler__title {
+  border-bottom-color: var(--secondary-color-active, #477a13);
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-secondary .spoiler:not(:last-child) .spoiler__text {
+  border-bottom: 0;
+}
+
+[data-plugin-formatting] div.accordion--style-secondary .spoiler__title {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-secondary .spoiler__title {
+  background-color: var(--secondary-color, #6dbc1d);
+  border-color: var(--secondary-color, #6dbc1d);
+}
+
+[data-plugin-formatting] div.accordion--style-secondary .spoiler__title:hover {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-secondary .spoiler__title:hover {
+  background-color: var(--secondary-color-hover, #4e8715);
+  border-color: var(--secondary-color-hover, #4e8715);
+}
+
+[data-plugin-formatting] div.accordion--style-secondary .spoiler__title.is-active {
+  color: #fff;
+}
+
+[dir] [data-plugin-formatting] div.accordion--style-secondary .spoiler__title.is-active {
+  background-color: var(--secondary-color-active, #477a13);
+  border-color: var(--secondary-color-active, #477a13);
+}

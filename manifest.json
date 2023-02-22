@@ -1,0 +1,1043 @@
+{
+  "name": "Codemonkey",
+  "author": "Premium Plus",
+  "version": "1.3.0",
+  "api_version": 2,
+  "default_locale": "en-us",
+  "settings": [
+    {
+      "label": "Translations",
+      "variables": [
+        {
+          "identifier": "translations_enable",
+          "type": "checkbox",
+          "description": "Enable a dynamic content instead of a static text",
+          "label": "Enable translations",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "Logo and favicon",
+      "variables": [
+        {
+          "identifier": "favicon",
+          "type": "file",
+          "description": "Company favicon",
+          "label": "Favicon"
+        },
+        {
+          "identifier": "logo",
+          "type": "file",
+          "description": "Company logo",
+          "label": "Logo"
+        },
+        {
+          "identifier": "logo_white",
+          "type": "file",
+          "description": "Company white logo for the dark mode",
+          "label": "Logo white"
+        },
+        {
+          "identifier": "logo_height",
+          "type": "text",
+          "description": "Height of the logo",
+          "label": "Logo height",
+          "value": "40px"
+        },
+        {
+          "identifier": "logo_url",
+          "type": "text",
+          "description": "URL for the logo",
+          "label": "Logo URL",
+          "value": "/hc"
+        },
+        {
+          "identifier": "show_hc_title",
+          "type": "checkbox",
+          "description": "Show help center title",
+          "label": "Help center title",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "Colors",
+      "variables": [
+        {
+          "identifier": "primary_color",
+          "type": "color",
+          "description": "Primary color",
+          "label": "Primary color",
+          "value": "rgba(9, 8, 8, 1)"
+        },
+        {
+          "identifier": "secondary_color",
+          "type": "color",
+          "description": "Secondary color",
+          "label": "Secondary color",
+          "value": "rgba(35, 35, 35, 1)"
+        },
+        {
+          "identifier": "primary_bg_color",
+          "type": "color",
+          "description": "Background color of your Help Center",
+          "label": "Primary bg color",
+          "value": "#FFFFFF"
+        },
+        {
+          "identifier": "secondary_bg_color",
+          "type": "color",
+          "description": "Background color of your sections",
+          "label": "Secondary bg color",
+          "value": "#f9fafb"
+        },
+        {
+          "identifier": "primary_text_color",
+          "type": "color",
+          "description": "Text color for body",
+          "label": "Primary text color",
+          "value": "#111827"
+        },
+        {
+          "identifier": "secondary_text_color",
+          "type": "color",
+          "description": "Text color for subheading elements",
+          "label": "Secondary text color",
+          "value": "#6b7280"
+        },
+        {
+          "identifier": "link_color",
+          "type": "color",
+          "description": "Text color for link elements",
+          "label": "Link color",
+          "value": "#2196f3"
+        },
+        {
+          "identifier": "border_color",
+          "type": "color",
+          "description": "Border color for elements",
+          "label": "Border color",
+          "value": "#d1d5db"
+        },
+        {
+          "identifier": "info_color",
+          "type": "color",
+          "description": "Brand info color",
+          "label": "Brand info color",
+          "value": "rgba(30, 181, 36, 1)"
+        },
+        {
+          "identifier": "success_color",
+          "type": "color",
+          "description": "Brand success color",
+          "label": "Brand success color",
+          "value": "rgba(0, 0, 0, 1)"
+        },
+        {
+          "identifier": "warning_color",
+          "type": "color",
+          "description": "Brand warning color",
+          "label": "Brand warning color",
+          "value": "#F1D52F"
+        },
+        {
+          "identifier": "danger_color",
+          "type": "color",
+          "description": "Brand danger color",
+          "label": "Brand danger color",
+          "value": "#e64545"
+        }
+      ]
+    },
+    {
+      "label": "Dark mode colors",
+      "variables": [
+        {
+          "identifier": "dark_mode",
+          "type": "checkbox",
+          "description": "Enable dark mode as default color scheme",
+          "label": "Enable dark mode",
+          "value": false
+        },
+        {
+          "identifier": "prefers_color_scheme",
+          "type": "checkbox",
+          "description": "Enable the user's preferred color scheme from their OS settings",
+          "label": "Prefers color scheme",
+          "value": false
+        },
+        {
+          "identifier": "primary_color_dark",
+          "type": "color",
+          "description": "Primary color",
+          "label": "Primary color",
+          "value": "rgba(255, 255, 255, 0)"
+        },
+        {
+          "identifier": "secondary_color_dark",
+          "type": "color",
+          "description": "Secondary color",
+          "label": "Secondary color",
+          "value": "#e645f8"
+        },
+        {
+          "identifier": "primary_bg_color_dark",
+          "type": "color",
+          "description": "Background color of your Help Center",
+          "label": "Primary bg color",
+          "value": "#000C20"
+        },
+        {
+          "identifier": "secondary_bg_color_dark",
+          "type": "color",
+          "description": "Background color of your sections",
+          "label": "Secondary bg color",
+          "value": "#182233"
+        },
+        {
+          "identifier": "primary_text_color_dark",
+          "type": "color",
+          "description": "Text color for body",
+          "label": "Primary text color",
+          "value": "#FFFFFF"
+        },
+        {
+          "identifier": "secondary_text_color_dark",
+          "type": "color",
+          "description": "Text color for subheading elements",
+          "label": "Secondary text color",
+          "value": "rgba(170, 178, 182, 1)"
+        },
+        {
+          "identifier": "link_color_dark",
+          "type": "color",
+          "description": "Text color for link elements",
+          "label": "Link color",
+          "value": "rgba(33, 150, 243, 1)"
+        },
+        {
+          "identifier": "border_color_dark",
+          "type": "color",
+          "description": "Border color for elements",
+          "label": "Border color",
+          "value": "#31405a"
+        },
+        {
+          "identifier": "info_color_dark",
+          "type": "color",
+          "description": "Info color",
+          "label": "Brand info color",
+          "value": "#1863BC"
+        },
+        {
+          "identifier": "success_color_dark",
+          "type": "color",
+          "description": "Success color",
+          "label": "Brand success color",
+          "value": "rgba(220, 254, 142, 1)"
+        },
+        {
+          "identifier": "warning_color_dark",
+          "type": "color",
+          "description": "Warning color",
+          "label": "Brand warning color",
+          "value": "rgba(190, 141, 0, 1)"
+        },
+        {
+          "identifier": "danger_color_dark",
+          "type": "color",
+          "description": "Danger color",
+          "label": "Brand danger color",
+          "value": "#e64545"
+        }
+      ]
+    },
+    {
+      "label": "Fonts",
+      "variables": [
+        {
+          "identifier": "text_font_family",
+          "type": "list",
+          "description": "Font for body text",
+          "label": "Text font",
+          "value": "'Inter', Helvetica Neue, Arial, sans-serif",
+          "options": [
+            {
+              "label": "Default font",
+              "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
+            },
+            {
+              "label": "Open Sans",
+              "value": "'Open Sans', sans-serif"
+            },
+            {
+              "label": "Roboto",
+              "value": "'Roboto', sans-serif"
+            },
+            {
+              "label": "Lato",
+              "value": "'Lato', sans-serif"
+            },
+            {
+              "label": "Rubik",
+              "value": "'Rubik', sans-serif"
+            },
+            {
+              "label": "Montserrat",
+              "value": "'Montserrat', sans-serif"
+            },
+            {
+              "label": "Nunito",
+              "value": "'Nunito', sans-serif"
+            },
+            {
+              "label": "Inter",
+              "value": "'Inter', Helvetica Neue, Arial, sans-serif"
+            },
+            {
+              "label": "Roboto Slab",
+              "value": "'Roboto Slab', serif"
+            },
+            {
+              "label": "Noto serif",
+              "value": "'Noto serif', serif"
+            },
+            {
+              "label": "Lora",
+              "value": "'Lora', serif"
+            }
+          ]
+        },
+        {
+          "identifier": "heading_font_family",
+          "type": "list",
+          "description": "Font for headings",
+          "label": "Heading font",
+          "value": "'Inter', Helvetica Neue, Arial, sans-serif",
+          "options": [
+            {
+              "label": "Default font",
+              "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
+            },
+            {
+              "label": "Open Sans",
+              "value": "'Open Sans', sans-serif"
+            },
+            {
+              "label": "Roboto",
+              "value": "'Roboto', sans-serif"
+            },
+            {
+              "label": "Lato",
+              "value": "'Lato', sans-serif"
+            },
+            {
+              "label": "Rubik",
+              "value": "'Rubik', sans-serif"
+            },
+            {
+              "label": "Montserrat",
+              "value": "'Montserrat', sans-serif"
+            },
+            {
+              "label": "Nunito",
+              "value": "'Nunito', sans-serif"
+            },
+            {
+              "label": "Inter",
+              "value": "'Inter', Helvetica Neue, Arial, sans-serif"
+            },
+            {
+              "label": "Roboto Slab",
+              "value": "'Roboto Slab', serif"
+            },
+            {
+              "label": "Noto serif",
+              "value": "'Noto serif', serif"
+            },
+            {
+              "label": "Lora",
+              "value": "'Lora', serif"
+            },
+            {
+              "label": "Playfair Display",
+              "value": "'Playfair Display', serif"
+            }
+          ]
+        },
+        {
+          "identifier": "text_font_size",
+          "type": "text",
+          "description": "Body text font size",
+          "label": "Text font size",
+          "value": "16px"
+        },
+        {
+          "identifier": "heading_1_font_size",
+          "type": "text",
+          "description": "Heading 1 font size",
+          "label": "Heading 1 font size",
+          "value": "32px"
+        },
+        {
+          "identifier": "heading_2_font_size",
+          "type": "text",
+          "description": "Heading 2 font size",
+          "label": "Heading 2 font size",
+          "value": "24px"
+        },
+        {
+          "identifier": "heading_3_font_size",
+          "type": "text",
+          "description": "Heading 3 font size",
+          "label": "Heading 3 font size",
+          "value": "20px"
+        },
+        {
+          "identifier": "heading_4_font_size",
+          "type": "text",
+          "description": "Heading 4 font size",
+          "label": "Heading 4 font size",
+          "value": "18px"
+        }
+      ]
+    },
+    {
+      "label": "Style",
+      "variables": [
+        {
+          "identifier": "border_radius_base",
+          "type": "text",
+          "description": "Border radius for buttons, text field, etc.",
+          "label": "Border radius",
+          "value": "12px"
+        },
+        {
+          "identifier": "border_radius_button",
+          "type": "text",
+          "description": "Border radius for buttons, text field, etc.",
+          "label": "Button border radius",
+          "value": "6px"
+        }
+      ]
+    },
+    {
+      "label": "Contacts",
+      "variables": [
+        {
+          "identifier": "show_facebook",
+          "type": "checkbox",
+          "description": "Show facebook button",
+          "label": "Show facebook button",
+          "value": false
+        },
+        {
+          "identifier": "facebook_url",
+          "type": "text",
+          "description": "URL to the Facebook account",
+          "label": "Facebook URL",
+          "value": "https://facebook.com"
+        },
+        {
+          "identifier": "show_twitter",
+          "type": "checkbox",
+          "description": "Show twitter button",
+          "label": "Show twitter button",
+          "value": true
+        },
+        {
+          "identifier": "twitter_url",
+          "type": "text",
+          "description": "URL to the Twitter account",
+          "label": "Twitter URL",
+          "value": "https://twitter.com/turingpi"
+        },
+        {
+          "identifier": "show_youtube",
+          "type": "checkbox",
+          "description": "Show youtube button",
+          "label": "Show youtube button",
+          "value": false
+        },
+        {
+          "identifier": "youtube_url",
+          "type": "text",
+          "description": "URL to the Youtube account",
+          "label": "Youtube URL",
+          "value": "https://youtube.com/turingpi"
+        },
+        {
+          "identifier": "show_linkedin",
+          "type": "checkbox",
+          "description": "Show linkedin button",
+          "label": "Show linkedin button",
+          "value": true
+        },
+        {
+          "identifier": "linkedin_url",
+          "type": "text",
+          "description": "URL to the LinkedIn account",
+          "label": "LinkedIn URL",
+          "value": "https://discord.com/invite/uNbysyc"
+        },
+        {
+          "identifier": "show_instagram",
+          "type": "checkbox",
+          "description": "Show instagram button",
+          "label": "Show instagram button",
+          "value": true
+        },
+        {
+          "identifier": "instagram_url",
+          "type": "text",
+          "description": "URL to the Instagram account",
+          "label": "Instagram URL",
+          "value": "https://github.com/turing-machines"
+        }
+      ]
+    },
+    {
+      "label": "Header",
+      "variables": [
+        {
+          "identifier": "show_color_mode_switcher",
+          "type": "checkbox",
+          "description": "Show color mode switcher",
+          "label": "Color mode switcher",
+          "value": false
+        },
+        {
+          "identifier": "show_github_link",
+          "type": "checkbox",
+          "description": "Show github link",
+          "label": "Github link",
+          "value": true
+        },
+        {
+          "identifier": "github_url",
+          "type": "text",
+          "description": "URL to the github repo",
+          "label": "Github URL",
+          "value": "https://github.com/turing-machines"
+        }
+      ]
+    },
+    {
+      "label": "Sidebar",
+      "variables": [
+        {
+          "identifier": "show_home_link",
+          "type": "checkbox",
+          "description": "Show home link",
+          "label": "Home link",
+          "value": true
+        },
+        {
+          "identifier": "sidebar_home_icon",
+          "type": "file",
+          "description": "Home link icon",
+          "label": "Home link icon"
+        },
+        {
+          "identifier": "show_submit_a_request",
+          "type": "checkbox",
+          "description": "Show submit a request button",
+          "label": "Submit a request button",
+          "value": false
+        },
+        {
+          "identifier": "sidebar_request_icon",
+          "type": "file",
+          "description": "New request link icon",
+          "label": "New request link icon"
+        },
+        {
+          "identifier": "show_signin",
+          "type": "checkbox",
+          "description": "Show sign in button",
+          "label": "Sign in button",
+          "value": true
+        },
+        {
+          "identifier": "sidebar_profile_icon",
+          "type": "file",
+          "description": "Profile link icon",
+          "label": "Profile link icon"
+        },
+        {
+          "identifier": "show_community",
+          "type": "checkbox",
+          "description": "Show Community button",
+          "label": "Community button",
+          "value": false
+        },
+        {
+          "identifier": "sidebar_community_icon",
+          "type": "file",
+          "description": "Community link icon",
+          "label": "Community link icon"
+        },
+        {
+          "identifier": "show_sidenav",
+          "type": "checkbox",
+          "description": "Enable the sidenav component",
+          "label": "Enable sidenav",
+          "value": true
+        },
+        {
+          "identifier": "sidenav_title",
+          "type": "text",
+          "description": "Sidenav title",
+          "label": "Sidenav title",
+          "value": ""
+        },
+        {
+          "identifier": "show_custom_link_1",
+          "type": "checkbox",
+          "description": "Show custom link 1",
+          "label": "Custom link 1",
+          "value": false
+        },
+        {
+          "identifier": "custom_link_1_icon",
+          "type": "file",
+          "description": "Custom link 1 icon",
+          "label": "Custom link 1 icon"
+        },
+        {
+          "identifier": "custom_link_1_text",
+          "type": "text",
+          "description": "Custom link 1 text",
+          "label": "Custom link 1 text",
+          "value": "Custom link 1"
+        },
+        {
+          "identifier": "custom_link_1_url",
+          "type": "text",
+          "description": "Custom link 1 url",
+          "label": "Custom link 1 url",
+          "value": "#"
+        },
+        {
+          "identifier": "show_custom_link_2",
+          "type": "checkbox",
+          "description": "Show custom link 2",
+          "label": "Custom link 2",
+          "value": false
+        },
+        {
+          "identifier": "custom_link_2_icon",
+          "type": "file",
+          "description": "Custom link 2 icon",
+          "label": "Custom link 2 icon"
+        },
+        {
+          "identifier": "custom_link_2_text",
+          "type": "text",
+          "description": "Custom link 2 text",
+          "label": "Custom link 2 text",
+          "value": "Custom link 2"
+        },
+        {
+          "identifier": "custom_link_2_url",
+          "type": "text",
+          "description": "Custom link 2 url",
+          "label": "Custom link 2 url",
+          "value": "#"
+        },
+        {
+          "identifier": "show_custom_link_3",
+          "type": "checkbox",
+          "description": "Show custom link 3",
+          "label": "Custom link 3",
+          "value": false
+        },
+        {
+          "identifier": "custom_link_3_icon",
+          "type": "file",
+          "description": "Custom link 3 icon",
+          "label": "Custom link 3 icon"
+        },
+        {
+          "identifier": "custom_link_3_text",
+          "type": "text",
+          "description": "Custom link 3 text",
+          "label": "Custom link 3 text",
+          "value": "Custom link 3"
+        },
+        {
+          "identifier": "custom_link_3_url",
+          "type": "text",
+          "description": "Custom link 3 url",
+          "label": "Custom link 3 url",
+          "value": "#"
+        }
+      ]
+    },
+    {
+      "label": "Welcome",
+      "variables": [
+        {
+          "identifier": "welcome_title",
+          "type": "text",
+          "description": "Text above the search field",
+          "label": "Welcome title",
+          "value": "Help"
+        },
+        {
+          "identifier": "welcome_subtitle",
+          "type": "text",
+          "description": "Description text for the welcome component",
+          "label": "Welcome subtitle",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "label": "Helpers",
+      "variables": [
+        {
+          "identifier": "show_helpers",
+          "type": "checkbox",
+          "description": "Enable the helpers component",
+          "label": "Enable helpers",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "Helper 1",
+      "variables": [
+        {
+          "identifier": "show_helper_1",
+          "type": "checkbox",
+          "description": "Enable helper 1",
+          "label": "Enable helper 1",
+          "value": true
+        },
+        {
+          "identifier": "helper_1_icon",
+          "type": "file",
+          "description": "We recommend uploading the icon in the SVG format",
+          "label": "Helper 1 icon"
+        },
+        {
+          "identifier": "helper_1_title",
+          "type": "text",
+          "description": "Helper 1 title",
+          "label": "Helper 1 title",
+          "value": "🙋 Kickstarter FAQ"
+        },
+        {
+          "identifier": "helper_1_description",
+          "type": "text",
+          "description": "Helper 1 description",
+          "label": "Helper 1 description",
+          "value": "-"
+        },
+        {
+          "identifier": "helper_1_url",
+          "type": "text",
+          "description": "Helper 1 url",
+          "label": "Helper 1 url",
+          "value": "/hc/en-us/categories/8535839333149-FAQ"
+        }
+      ]
+    },
+    {
+      "label": "Helper 2",
+      "variables": [
+        {
+          "identifier": "show_helper_2",
+          "type": "checkbox",
+          "description": "Enable helper 2",
+          "label": "Enable helper 2",
+          "value": true
+        },
+        {
+          "identifier": "helper_2_icon",
+          "type": "file",
+          "description": "We recommend uploading the icon in the SVG format",
+          "label": "Helper 2 icon"
+        },
+        {
+          "identifier": "helper_2_title",
+          "type": "text",
+          "description": "Helper 2 title",
+          "label": "Helper 2 title",
+          "value": "💬 Ask community"
+        },
+        {
+          "identifier": "helper_2_description",
+          "type": "text",
+          "description": "Helper 2 description",
+          "label": "Helper 2 description",
+          "value": "Get help from the Discord community and the Turing Pi Team."
+        },
+        {
+          "identifier": "helper_2_url",
+          "type": "text",
+          "description": "Helper 2 url",
+          "label": "Helper 2 url",
+          "value": "https://discord.com/invite/uNbysyc"
+        }
+      ]
+    },
+    {
+      "label": "Helper 3",
+      "variables": [
+        {
+          "identifier": "show_helper_3",
+          "type": "checkbox",
+          "description": "Enable helper 3",
+          "label": "Enable helper 3",
+          "value": true
+        },
+        {
+          "identifier": "helper_3_icon",
+          "type": "file",
+          "description": "We recommend uploading the icon in the SVG format",
+          "label": "Helper 3 icon"
+        },
+        {
+          "identifier": "helper_3_title",
+          "type": "text",
+          "description": "Helper 3 title",
+          "label": "Helper 3 title",
+          "value": "✍️ Submit a request"
+        },
+        {
+          "identifier": "helper_3_description",
+          "type": "text",
+          "description": "Helper 3 description",
+          "label": "Helper 3 description",
+          "value": "-"
+        },
+        {
+          "identifier": "helper_3_url",
+          "type": "text",
+          "description": "Helper 3 url",
+          "label": "Helper 3 url",
+          "value": "https://help.turingpi.com/hc/en-us/requests/new"
+        }
+      ]
+    },
+    {
+      "label": "Home page",
+      "variables": [
+        {
+          "identifier": "show_promoted",
+          "type": "checkbox",
+          "description": "Enable the promoted articles component",
+          "label": "Enable promoted articles",
+          "value": true
+        },
+        {
+          "identifier": "show_category_list",
+          "type": "checkbox",
+          "description": "Enable the category list component",
+          "label": "Enable category list",
+          "value": false
+        },
+        {
+          "identifier": "show_category_tree",
+          "type": "checkbox",
+          "description": "Show category tree",
+          "label": "Category tree",
+          "value": true
+        },
+        {
+          "identifier": "show_recent_activities",
+          "type": "checkbox",
+          "description": "Enable the recent activities component",
+          "label": "Enable recent activities",
+          "value": false
+        },
+        {
+          "identifier": "recent_activities_button",
+          "type": "text",
+          "description": "Recent activities button text",
+          "label": "Recent activities button text",
+          "value": "Read more"
+        }
+      ]
+    },
+    {
+      "label": "CTA",
+      "variables": [
+        {
+          "identifier": "show_cta",
+          "type": "checkbox",
+          "description": "Enable the CTA component",
+          "label": "Enable CTA",
+          "value": false
+        },
+        {
+          "identifier": "cta_title",
+          "type": "text",
+          "description": "CTA title",
+          "label": "CTA title",
+          "value": "-"
+        },
+        {
+          "identifier": "cta_subtitle",
+          "type": "text",
+          "description": "CTA subtitle",
+          "label": "CTA subtitle",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "label": "Footer",
+      "variables": [
+        {
+          "identifier": "copyright",
+          "type": "text",
+          "description": "Footer copyright",
+          "label": "Copyright",
+          "value": "Turing Machines Inc"
+        }
+      ]
+    },
+    {
+      "label": "Knowledge base",
+      "variables": [
+        {
+          "identifier": "show_follow_section",
+          "type": "checkbox",
+          "description": "Users can follow a specific section",
+          "label": "Follow section",
+          "value": true
+        },
+        {
+          "identifier": "show_follow_article",
+          "type": "checkbox",
+          "description": "Users can follow a specific article",
+          "label": "Follow article",
+          "value": true
+        },
+        {
+          "identifier": "show_article_meta",
+          "type": "checkbox",
+          "description": "Enable an article meta data",
+          "label": "Article meta",
+          "value": true
+        },
+        {
+          "identifier": "show_share",
+          "type": "checkbox",
+          "description": "Enable the sharing content on social media",
+          "label": "Enable share",
+          "value": true
+        },
+        {
+          "identifier": "show_vote",
+          "type": "checkbox",
+          "description": "Enable the vote component",
+          "label": "Enable vote",
+          "value": true
+        },
+        {
+          "identifier": "show_comments",
+          "type": "checkbox",
+          "description": "Show comments on articles",
+          "label": "Enable comments",
+          "value": true
+        },
+        {
+          "identifier": "show_toc",
+          "type": "checkbox",
+          "description": "Show table of content",
+          "label": "Enable table of content",
+          "value": true
+        },
+        {
+          "identifier": "article_lists",
+          "type": "list",
+          "description": "Type of article lists",
+          "label": "Article lists",
+          "value": "related_section",
+          "options": [
+            {
+              "label": "Hide article lists block",
+              "value": "none"
+            },
+            {
+              "label": "Recent & Related",
+              "value": "recent_related"
+            },
+            {
+              "label": "Recent & Articles in this section",
+              "value": "recent_section"
+            },
+            {
+              "label": "Related & Articles in this section",
+              "value": "related_section"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Community",
+      "variables": [
+        {
+          "identifier": "show_follow_community_topic",
+          "type": "checkbox",
+          "description": "Users can follow a specific topic",
+          "label": "Follow community topic",
+          "value": true
+        },
+        {
+          "identifier": "show_follow_community_post",
+          "type": "checkbox",
+          "description": "Users can follow a specific post",
+          "label": "Follow community post",
+          "value": true
+        },
+        {
+          "identifier": "show_community_post_meta",
+          "type": "checkbox",
+          "description": "Enable a post meta data",
+          "label": "Post meta",
+          "value": true
+        },
+        {
+          "identifier": "show_community_post_sharing",
+          "type": "checkbox",
+          "description": "Show social media sharing on post",
+          "label": "Social sharing",
+          "value": true
+        },
+        {
+          "identifier": "show_community_post_vote",
+          "type": "checkbox",
+          "description": "Enable the vote component",
+          "label": "Community post vote",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "Requests list",
+      "variables": [
+        {
+          "identifier": "request_list_beta",
+          "type": "checkbox",
+          "description": "Users can sort and filter requests, add and remove columns",
+          "label": "New request list experience",
+          "value": true
+        },
+        {
+          "identifier": "brand_color",
+          "type": "color",
+          "description": "Brand color for the requests list",
+          "label": "Brand color",
+          "value": "#17494D"
+        }
+      ]
+    }
+  ]
+}

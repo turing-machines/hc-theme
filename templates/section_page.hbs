@@ -1,0 +1,54 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+  {{breadcrumbs}}
+
+  <h1 class="section__title section__title--left">{{section.name}}</h1>
+  {{#if section.description}}
+    <div class="section__description">{{section.description}}</div>
+  {{/if}}
+  {{#if settings.show_follow_section}}
+    <div class="section__subscribe subscribe-btn">
+      {{subscribe}}
+    </div>
+  {{/if}}
+</section>
+
+<section class="inner-page">
+
+  {{!-- Subsection list --}}
+  {{#if section.sections}}
+    <div class="row category-list">
+      {{#each section.sections}}
+        <div class="col-12 col-md-6">
+          <a href="{{url}}" class="category-list__item">
+            <span class="h3 category-list__title">{{name}}</span>
+            {{#if description}}
+              <span class="category-list__description">{{description}}</span>
+            {{/if}}
+          </a>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{!-- Articles --}}
+  {{#if section.articles}}
+    <div class="category-tree__articles">
+      {{#each section.articles}}
+        <a href="{{url}}" class="category-tree__article">{{title}}</a>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{!-- No content --}}
+  {{#unless section.sections}}
+    {{#unless section.articles}}
+      <div class="category-tree__empty">
+        <a href="{{section.url}}">{{t 'empty'}}</a>
+      </div>
+    {{/unless}}
+  {{/unless}}
+
+  {{pagination}}
+
+</section>

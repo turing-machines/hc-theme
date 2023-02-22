@@ -1,0 +1,114 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+
+  {{breadcrumbs}}
+
+  <h1 class="section__title section__title--left">
+    {{topic.name}}
+    {{#if topic.internal}}
+      <span class="meta">{{t 'internal'}}</span>
+    {{/if}}
+  </h1>
+
+  {{#if topic.description}}
+    <div class="section__description">{{topic.description}}</div>
+  {{/if}}
+
+  <div class="section__subscribe subscribe-btn">
+    {{#if settings.show_follow_community_topic}}
+      {{subscribe}}
+    {{/if}}
+  </div>
+</section>
+
+<ul class="my-activities-menu">
+  <li class="my-activities-menu__item">{{link 'topics'}}</li>
+  <li class="my-activities-menu__item is-active">{{t 'posts'}}</li>
+  <li class="my-activities-menu__item">{{link 'new_post'}}</li>
+</ul>
+
+{{!-- Content --}}
+<section class="section inner-page">
+
+  {{!-- Filters --}}
+  <div class="topic-controls">
+
+    <div class="dropdown" data-plugin-dropdown>
+      <a class="btn btn--light btn--md js-dropdown-open" tabindex="0" role="button" aria-label="Open">
+        {{current_filter.label}}
+      </a>
+      <div class="dropdown__content js-dropdown" role="menu" aria-hidden="true">
+        {{#each filters}}
+          <a href="{{url}}" class="dropdown__menuitem" rel="nofollow" role="menuitem" aria-selected="{{selected}}">
+            {{name}}
+          </a>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="dropdown" data-plugin-dropdown>
+      <a class="btn btn--light btn--md js-dropdown-open" tabindex="0" role="button" aria-label="Open">
+        {{current_sorter.label}}
+      </a>
+      <div class="dropdown__content js-dropdown" role="menu" aria-hidden="true">
+        {{#each sorters}}
+          <a href="{{url}}" class="dropdown__menuitem" rel="nofollow" role="menuitem" aria-selected="{{selected}}">
+            {{name}}
+          </a>
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+
+  {{!-- Posts --}}
+  {{#if posts}}
+    <div class="comments__list comments__list--content">
+      {{#each posts}}
+        <div class="comment">
+          <div class="comment__left">
+
+            <div class="comment__heading">
+              <img class="user-avatar user-avatar--default" src="{{author.avatar_url}}" alt="Avatar">
+              <div>
+                {{#link 'user_profile' id=author.id}}
+                  {{author.name}}
+                {{/link}}
+                <div class="meta">
+                  {{date created_at}}
+                  {{#if editor}}
+                    ({{t 'edited'}} {{date edited_at timeago=true}})
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+            <div class="comment__body">
+              <h3>
+                {{#if pinned}}<span class="fa fa-star"></span>{{/if}}
+                <a href="{{url}}">{{title}}</a>
+              </h3>
+              <div class="meta">
+
+                {{#is status 'none'}}
+                {{else}}
+                  <span class="post-status post-status--{{status_dasherized}}">
+                    {{status_name}}
+                  </span>
+                {{/is}}
+
+                {{vote_sum}} {{t 'vote' count=vote_sum}}
+                | {{comment_count}} {{t 'comment' count=comment_count}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    {{pagination}}
+  {{else}}
+    <p>{{t 'no_content'}}</p>
+  {{/if}}
+
+</section>

@@ -1,0 +1,246 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+        {{breadcrumbs}}
+      </div>
+      {{#if settings.show_follow_article}}
+        <div class="col-12 col-lg-3 subscribe-btn">
+          {{subscribe}}
+        </div>
+      {{/if}}
+<!--       <div class="col-12 col-lg-3">
+  			<a href="" class="edit-on-github" target="_blank">Еdit on Github</a>
+			</div> -->
+    	<script>
+      (()=> {
+      	let items = [];
+				Array.from(document.querySelectorAll('.breadcrumbs li')).forEach((node, idx) => {
+      		if (idx === 0) {
+      			return;
+      		}
+      		items.push(node.innerText.trim());
+	      });
+      	items.push('{{article.title}}');
+      	document.getElementsByClassName('edit-on-github')[0].href = 'https://github.com/turing-machines/help-center/tree/main/' + items.map((item) => {
+          return item.replace('/', '%25slash%25');
+        }).join('/').split(' ').join('%20') + '.md'
+      })();
+    </script>
+    </div>
+</section>
+
+{{!-- Article content --}}
+<section class="inner-page">
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9">
+      <div class="article-heading">
+        <h1 class="section__title section__title--left">{{article.title}}</h1>
+
+        <div class="section__container">
+          {{#if settings.show_article_meta}}
+            <div class="section__meta">
+              <img class="user-avatar user-avatar--default" src="{{article.author.avatar_url}}" alt="Avatar">
+              <div>
+                <b>
+                  {{#link 'user_profile' id=article.author.id}}
+                    {{article.author.name}}
+                  {{/link}}
+                </b>
+                <div class="meta">{{date article.created_at}}</div>
+              </div>
+            </div>
+          {{/if}}
+          {{#if settings.show_follow_article}}
+            <div class="section__subscribe">
+              {{#if settings.show_share}}
+                {{share}}
+              {{/if}}
+            </div>
+          {{/if}}
+        </div>
+
+      </div>
+
+      <div data-article-body>
+        <div class="markdown" itemprop="articleBody" data-plugin-formatting>
+          {{article.body}}
+        </div>
+
+        {{#if attachments}}
+          <ul class="attachment-list">
+            {{#each attachments}}
+              <li class="attachment-list__item">
+                <i class="fas fa-file"></i>
+                <a href="{{url}}" target="_blank" class="link-primary">{{name}}</a>
+                <div class="meta">({{size}})</div>
+              </li>
+            {{/each}}
+          </ul>
+        {{/if}}
+
+        {{#if settings.show_vote}}
+          {{#with article}}
+            <div class="article-vote">
+              <h4 class="article-vote__title">{{t 'was_this_article_helpful'}}</h4>
+              <div class="article-vote__controls">
+                {{#vote 'up' class='btn btn--color-primary' selected_class='is-active' role='button'}}
+                  <span class="fa fa-thumbs-up"></span>
+                {{/vote}}
+                {{#vote 'down' class='btn btn--color-primary' selected_class='is-active' role='button'}}
+                  <span class="fa fa-thumbs-down"></span>
+                {{/vote}}
+              </div>
+              <div class="article-vote__count meta">
+                {{vote 'label' class='article-vote-label'}}
+              </div>
+            </div>
+          {{/with}}
+        {{/if}}
+
+        <div class="article-more-questions">Have more questions? <a href="javascript:void(0);" onclick="zE('messenger', 'open');">Submit a request</a></div>
+
+        {{#isnt settings.article_lists 'none'}}
+          <div class="article-lists">
+            <div class="row">
+
+              {{! Recent articles }}
+              {{#isnt settings.article_lists 'related_section'}}
+                <div class="col-12 col-md-6">
+                  <div class="inner-page__rightbar">
+                    {{recent_articles}}
+                  </div>
+                </div>
+              {{/isnt}}
+
+              {{! Related articles }}
+              {{#isnt settings.article_lists 'recent_section'}}
+                <div class="col-12 col-md-6">
+                  <div class="inner-page__rightbar">
+                    {{related_articles}}
+                  </div>
+                </div>
+              {{/isnt}}
+
+              {{! Article in this section }}
+              {{#isnt settings.article_lists 'recent_related'}}
+                <div class="col-12 col-md-6">
+                  <div class="inner-page__rightbar">
+                    <section class="recent-articles">
+                      <h3>{{t 'articles_in_section'}}</h3>
+                      <ul data-plugin-list-limit='{"limit": 5}'>
+                        {{#each section.articles}}
+                          <li><a href="{{url}}">{{title}}</a></li>
+                        {{/each}}
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              {{/isnt}}
+
+            </div>
+          </div>
+        {{/isnt}}
+      </div>
+    </div>
+    {{#if settings.show_toc}}
+      <div class="col-12 col-lg-3">
+        <div data-plugin-toc></div>
+      </div>
+    {{/if}}
+  </div>
+</section>
+
+{{!-- Article comments --}}
+{{#if settings.show_comments}}
+  <section class="section comments">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+
+        <div class="comments__heading">
+          <h2 class="comments__title">
+            {{t 'comments'}}
+            <span class="meta">({{t 'comments_count' count=article.comment_count}})</span>
+          </h2>
+
+          {{#if comments}}
+            <div class="dropdown" data-plugin-dropdown>
+              <a class="js-dropdown-open btn btn--secondary btn--md" tabindex="0" role="button" aria-label="Open">
+                {{t 'sort_by'}}
+              </a>
+              <div class="dropdown__content dropdown__content--xs js-dropdown" role="menu" aria-hidden="true">
+                {{#each comment_sorters}}
+                  <a class="dropdown__menuitem" aria-selected="{{selected}}" href="{{url}}" rel="nofollow" role="menuitem">{{name}}</a>
+                {{/each}}
+              </div>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="comments__container">
+          {{#if comments}}
+            <div class="comments__list" id="comments">
+              {{#each comments}}
+                <div class="comment" id="{{anchor}}">
+                  <div class="comment__left">
+                    <div class="comment__heading">
+                      <img class="user-avatar user-avatar--default" src="{{author.avatar_url}}" alt="Avatar">
+                      <div>
+                        {{#link 'user_profile' id=author.id}}
+                          {{author.name}}
+                        {{/link}}
+                        <div class="meta">
+                          {{date created_at}}
+                          {{#if editor}}
+                            ({{t 'edited'}} {{date edited_at timeago=true}})
+                          {{/if}}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment__body">
+                      {{body}}
+                    </div>
+                  </div>
+                  <div class="comment__sidebar">
+                    {{#unless official}}
+                      <div class="vote vote--comment">
+                        {{#vote 'up' class='btn btn--light btn--sm btn--circle' role='button' selected_class='is-active'}}
+                          <span class="fas fa-angle-up"></span>
+                        {{/vote}}
+                        <div class="meta">
+                          {{vote 'sum'}}
+                        </div>
+                        {{#vote 'down' class='btn btn--light btn--sm btn--circle' role='button' selected_class='is-active'}}
+                          <span class="fas fa-angle-down"></span>
+                        {{/vote}}
+                      </div>
+                    {{/unless}}
+                    <div class="comment__actions">
+                      {{#actions}}
+                        <span class="fas fa-cog"></span>
+                      {{/actions}}
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+            {{pagination}}
+          {{/if}}
+
+          <p class="comments__callout">{{comment_callout}}</p>
+
+          {{#form 'comment' class='comment-form'}}
+            <div class="comment-form__body">
+              {{wysiwyg 'body'}}
+            </div>
+            <div class="comment-form__controls">
+              {{input type='submit' class='btn btn--primary'}}
+            </div>
+          {{/form}}
+        </div>
+
+      </div>
+    </div>
+  </section>
+{{/if}}

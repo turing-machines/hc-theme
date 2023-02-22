@@ -1,0 +1,138 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+  {{breadcrumbs}}
+
+  <h1 class="section__title section__title--left">{{t 'results' query=query count=results_count}}</h1>
+</section>
+
+{{!-- Content--}}
+<section class="inner-page">
+
+  <div class="row flex-row-reverse">
+
+    {{!-- Search filters --}}
+    <div class="col-12 col-md-4 col-lg-3">
+      <div id="search-filter">
+        {{#if help_center_filters}}
+          <section class="inner-page__rightbar" data-plugin-spoiler>
+            <h3 class="js-spoiler-toggle">{{t 'filter_by_help_center'}}</h3>
+            <ul class="list-unstyled filter js-spoiler" aria-hidden="true">
+              {{#each help_center_filters}}
+                <li>
+                  <a href="{{url}}" class="{{#if selected}}is-disabled{{/if}}">
+                    <span>{{name}} ({{count}})</span>
+                    {{#if selected}}
+                      <small class="fas fa-chevron-right is-hidden--ltr"></small>
+                      <small class="fas fa-chevron-left is-hidden--rtl"></small>
+                    {{/if}}
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+        {{/if}}
+        {{#if help_center.community_enabled}}
+          <section class="inner-page__rightbar" data-plugin-spoiler>
+            <h3 class="js-spoiler-toggle">{{t 'filter_by_type'}}</h3>
+            <ul class="list-unstyled filter js-spoiler" aria-hidden="true">
+              {{#each filters}}
+                <li>
+                  <a href="{{url}}" class="{{#if selected}}is-disabled{{/if}}">
+                    <span>{{name}} ({{count}})</span>
+                    {{#if selected}}
+                      <small class="fas fa-chevron-right is-hidden--ltr"></small>
+                      <small class="fas fa-chevron-left is-hidden--rtl"></small>
+                    {{/if}}
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+        {{/if}}
+        {{#if subfilters}}
+          <section class="inner-page__rightbar" data-plugin-spoiler>
+            {{#is current_filter.identifier 'knowledge_base'}}
+              <h3 class="js-spoiler-toggle">{{t 'filter_by_category'}}</h3>
+            {{/is}}
+            {{#is current_filter.identifier 'community'}}
+              <h3 class="js-spoiler-toggle">{{t 'filter_by_topic'}}</h3>
+            {{/is}}
+            <ul class="list-unstyled filter js-spoiler" aria-hidden="true" data-plugin-list-limit='{"limit": 3}'>
+              {{#each subfilters}}
+                <li>
+                  <a href="{{url}}" class="{{#if selected}}is-disabled{{/if}}">
+                    <span>{{name}} ({{count}})</span>
+                    {{#if selected}}
+                      <small class="fas fa-chevron-right is-hidden--ltr"></small>
+                      <small class="fas fa-chevron-left is-hidden--rtl"></small>
+                    {{/if}}
+                  </a>
+                </li>
+              {{/each}}
+              <li class="js-ignore-item">
+                <button class="btn btn--md btn--primary is-hidden filter__btn js-show-more">
+                  {{#is current_filter.identifier 'knowledge_base'}}
+                    {{t 'show_more_categories'}}
+                  {{/is}}
+                  {{#is current_filter.identifier 'community'}}
+                    {{t 'show_more_topics'}}
+                  {{/is}}
+                </button>
+              </li>
+            </ul>
+          </section>
+        {{/if}}
+      </div>
+    </div>
+
+    {{!-- Search results --}}
+    <div class="col-12 col-md-8 col-lg-9">
+      {{#if results}}
+        <div class="comments__list comments__list--content">
+          {{#each results}}
+            <div class="comment">
+              <div class="comment__left">
+                <div class="comment__heading">
+                  <img class="user-avatar user-avatar--default" src="{{author.avatar_url}}" alt="{{author.name}}">
+                  <div>
+                    {{#link 'user_profile' id=author.id}}
+                      {{author.name}}
+                    {{/link}}
+                    <div class="meta">
+                      <span>{{date created_at}}</span>
+                      <span>| {{t 'comments_count' count=comment_count}}</span>
+                      {{#if vote_sum}}
+                        <span>| <i class="fas fa-thumbs-up"></i> {{vote_sum}}</span>
+                      {{/if}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="comment__body">
+                  <a href="{{url}}" class="h5 articles__link">{{title}}</a>
+                  <div class="articles__body">{{text}}</div>
+                </div>
+
+                <ol class="breadcrumbs breadcrumbs--bottom">
+                  {{#each path_steps}}
+                    <li title="{{name}}"><a href="{{url}}">{{name}}</a></li>
+                  {{/each}}
+                </ol>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+
+        {{pagination}}
+      {{else}}
+        <p>
+          {{t 'no_results_unified'}}
+          {{#link 'help_center'}}
+            {{t 'browse_help_center'}}
+          {{/link}}
+        </p>
+      {{/if}}
+    </div>
+
+  </div>
+</section>

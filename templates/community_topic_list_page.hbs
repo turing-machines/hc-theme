@@ -1,0 +1,41 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+  {{breadcrumbs}}
+
+  <h1 class="section__title section__title--left">
+    {{t 'community_topics'}}
+  </h1>
+</section>
+
+<ul class="my-activities-menu">
+  <li class="my-activities-menu__item is-active">{{t 'topics'}}</li>
+  <li class="my-activities-menu__item">{{link 'posts'}}</li>
+  <li class="my-activities-menu__item">{{link 'new_post'}}</li>
+</ul>
+
+{{!-- Content --}}
+<section class="section inner-page">
+  {{#if topics}}
+
+    <div class="topic-list">
+      <div class="row">
+        {{#each topics}}
+          <div class="col-12 col-md-6">
+            <div class="topic-list__item">
+              <h3 class="topic-list__heading"><a href="{{url}}">{{name}}</a></h3>
+              <div class="meta">
+                <span>{{t 'post_count' count=post_count}}</span>
+                <span>{{t 'follower_count' count=follower_count}}</span>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    {{pagination}}
+  {{else}}
+    <p>{{t 'no_content'}}</p>
+  {{/if}}
+
+</section>

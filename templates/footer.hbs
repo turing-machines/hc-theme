@@ -1,0 +1,66 @@
+<footer class="footer">
+  <div class="row">
+    <div class="col-md-6 footer__soc">
+      {{#if settings.show_facebook}}
+        <a href="{{settings.facebook_url}}">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+      {{/if}}
+      {{#if settings.show_twitter}}
+        <a href="{{settings.twitter_url}}">
+          <i class="fab fa-twitter-square"></i>
+        </a>
+      {{/if}}
+      {{#if settings.show_youtube}}
+        <a href="{{settings.youtube_url}}">
+          <i class="fab fa-youtube-square"></i>
+        </a>
+      {{/if}}
+      {{#if settings.show_linkedin}}
+        <a href="{{settings.linkedin_url}}">
+          <i class="fab fa-discord"></i>
+        </a>
+      {{/if}}
+      {{#if settings.show_instagram}}
+        <a href="{{settings.instagram_url}}">
+          <i class="fab fa-github"></i>
+        </a>
+      {{/if}}
+    </div>
+<!--     <div class="col-md-6 footer__copy">
+      © {{settings.copyright}}<br/>
+    </div> -->
+  </div>
+</footer>
+
+</div>
+</div>
+</div>
+
+<script>
+  $(window).trigger('page:loaded');
+
+  var observer = new MutationObserver(function(mutationsList, observer) {
+    mutationsList.forEach(function(mutation) {
+      if (mutation.type === 'childList') {
+        if (window.HelpCenter) {
+          try {
+            window.theme.settings = Object.assign({}, HelpCenter.internal.theming_settings);
+          }
+          catch (error) {
+            window.theme.settings = {
+              isError: true
+            }
+          }
+          observer.disconnect();
+        }
+      }
+    });
+  });
+
+  observer.observe(document.body, {
+    attributes: false,
+    childList: true,
+    subtree: false
+  });
+</script>

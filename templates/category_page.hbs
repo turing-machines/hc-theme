@@ -1,0 +1,71 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+  {{breadcrumbs}}
+
+  <h1 class="section__title section__title--left">{{category.name}}</h1>
+  {{#if category.description}}
+    <div class="section__description">{{category.description}}</div>
+  {{/if}}
+</section>
+
+{{!-- Sections --}}
+<section class="section">
+
+  {{#if sections}}
+    <div class="row">
+      {{#each sections}}
+        <div class="col-12 col-md-6">
+          <div class="category-tree__section">
+            <div class="category-tree__section-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div>
+              <a href="{{url}}" class="h3 category-tree__section-name">{{name}}</a>
+              <span class="category-tree__section-description">{{description}} <span>{{t 'articles'}}: {{articles.length}}</span></span>
+
+              {{!-- Subsections --}}
+              {{#if sections}}
+                <div class="category-tree__subsections">
+                  {{#each sections}}
+                    <a href="{{url}}" class="category-tree__subsection">{{name}}</a>
+                  {{/each}}
+                </div>
+              {{/if}}
+
+              {{!-- Articles --}}
+              {{#if articles}}
+                <div class="category-tree__articles">
+                  {{#each articles}}
+                    <a href="{{url}}" class="category-tree__article">{{title}}</a>
+                  {{/each}}
+                </div>
+
+                {{#if more_articles}}
+                  <div class="category-tree__more">
+                    <a href="{{url}}" class="btn btn--color-primary btn--md">
+                      {{t 'show_all_articles' count=article_count}}
+                    </a>
+                  </div>
+                {{/if}}
+              {{/if}}
+
+              {{!-- No content --}}
+              {{#unless sections}}
+                {{#unless articles}}
+                  <div class="category-tree__empty">
+                    <a href="{{url}}">{{t 'empty'}}</a>
+                  </div>
+                {{/unless}}
+              {{/unless}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <p>
+      <i><a href="{{category.url}}">{{t 'empty'}}</a></i>
+    </p>
+  {{/if}}
+
+</section>

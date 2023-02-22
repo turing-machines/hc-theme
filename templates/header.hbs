@@ -1,0 +1,202 @@
+<div class="main-container" data-plugin-mobile-menu>
+  <div class="row">
+    <div class="col-lg-3 main-container__sidebar" data-plugin-sidebar>
+
+      <div class="sidebar-width-controller js-controller">
+        <a class="sidebar-collapse-btn btn btn--circle btn--light btn--md js-toggle">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+      </div>
+
+      <div class="main-container__sidebar-fixed" data-plugin-fixed-sidebar>
+        <div class="header__container header__container--left">
+          <div class="header__mobile-menu js-toggle-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+          <a href="{{settings.logo_url}}" class="header__logo" data-plugin-internal-url>
+            <img src="{{settings.logo}}" alt="Logo" class="is-hidden--dark-mode">
+            <img src="{{settings.logo_white}}" alt="Logo" class="is-hidden--light-mode">
+            {{#if settings.show_hc_title}}<span>{{help_center.name}}</span>{{/if}}
+          </a>
+          <div class="header__mobile-menu js-toggle-searchbar">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+
+        <div class="header__menu js-header-menu">
+          <div class="header-menu-toggle js-toggle-menu">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="header__menu-box">
+            <ul class="sidebar-menu">
+              {{#if settings.show_home_link}}
+                <li>
+                  <a href="https://turingpi.com">
+<!--                     <img src="{{settings.sidebar_home_icon}}" alt=""> -->
+                    <span>⬅️ Back to turingpi.com</span>
+                  </a>
+                </li>
+              {{/if}}
+              {{#if help_center.community_enabled}}
+                {{#if settings.show_community}}
+                  <li>
+                    {{#link 'community'}}
+                      <img src="{{settings.sidebar_community_icon}}" alt="">
+                      <span>{{t 'community'}}</span>
+                    {{/link}}
+                  </li>
+                {{/if}}
+              {{/if}}
+              {{#if settings.show_submit_a_request}}
+                <li>
+                  <a href="/hc/{{help_center.locale}}/requests/new">
+                    <img src="{{settings.sidebar_request_icon}}" alt="">
+                    <span>{{t 'submit_a_request'}}</span>
+                  </a>
+                </li>
+              {{/if}}
+              {{#if settings.show_signin}}
+                {{#if signed_in}}
+                  <li class="is-visible-collapse">
+                    {{#link "my_activities" role="menuitem"}}
+<!--                       <img src="{{settings.sidebar_profile_icon}}" alt=""> -->
+                     🔓  {{user_name}}
+                    {{/link}}
+                  </li>
+                  <li class="sidenav__item" data-plugin-spoiler>
+                    <a class="sidenav__item__category js-spoiler-toggle" role="button" tabindex="0">
+<!--                       <img src="{{settings.sidebar_profile_icon}}" alt=""> -->
+                      🔓  {{user_name}}
+                    </a>
+                    <div class="sidenav__container sidebar-submenu js-spoiler">
+                      <ul class="sidenav__list sidenav__list--sections">
+                        <li class="sidenav__item">
+                          {{link "my_activities" role="menuitem"}}
+                        </li>
+                        <li class="sidenav__item">
+                          {{my_profile role="menuitem"}}
+                        </li>
+                        <li class="sidenav__item">
+                          {{change_password role="menuitem"}}
+                        </li>
+                        <li class="sidenav__item">
+                          {{link "sign_out" role="menuitem"}}
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                {{else}}
+                  <li>
+                    {{#link "sign_in"}}
+<!--                       <img src="{{settings.sidebar_profile_icon}}" alt=""> -->
+                      <span>🔒 {{t 'sign_in'}}</span>
+                    {{/link}}
+                  </li>
+                {{/if}}
+              {{/if}}
+            </ul>
+            {{#if settings.show_sidenav}}
+              <p class="sidebar-menu-heading">
+                {{#is settings.sidenav_title '-'}}
+                  {{t 'knowledge_base'}}
+                {{else}}
+                  {{#if settings.translations_enable}}
+                    {{dc settings.sidenav_title}}
+                  {{else}}
+                    {{settings.sidenav_title}}
+                  {{/if}}
+                {{/is}}
+              </p>
+              <div class="sidebar-menu" data-plugin-sidenav></div>
+            {{/if}}
+            <ul class="sidebar-menu">
+              {{#if settings.show_custom_link_1}}
+                <li>
+                  <a href="{{settings.custom_link_1_url}}" data-plugin-internal-url>
+                    <img src="{{settings.custom_link_1_icon}}" alt="">
+                    <span>
+                      {{#if settings.translations_enable}}
+                        {{dc settings.custom_link_1_text}}
+                      {{else}}
+                        {{settings.custom_link_1_text}}
+                      {{/if}}
+                    </span>
+                  </a>
+                </li>
+              {{/if}}
+              {{#if settings.show_custom_link_2}}
+                <li>
+                  <a href="{{settings.custom_link_2_url}}" data-plugin-internal-url>
+                    <img src="{{settings.custom_link_2_icon}}" alt="">
+                    <span>
+                      {{#if settings.translations_enable}}
+                        {{dc settings.custom_link_2_text}}
+                      {{else}}
+                        {{settings.custom_link_2_text}}
+                      {{/if}}
+                    </span>
+                  </a>
+                </li>
+              {{/if}}
+              {{#if settings.show_custom_link_3}}
+                <li>
+                  <a href="{{settings.custom_link_3_url}}" data-plugin-internal-url>
+                    <img src="{{settings.custom_link_3_icon}}" alt="">
+                    <span>
+                      {{#if settings.translations_enable}}
+                        {{dc settings.custom_link_3_text}}
+                      {{else}}
+                        {{settings.custom_link_3_text}}
+                      {{/if}}
+                    </span>
+                  </a>
+                </li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col">
+      <div class="header__container header__container--right js-header-searchbar">
+        <div class="header__topbar" data-plugin-header>
+          {{search instant=true submit=false class="header-search"}}
+
+          <div class="header__nav">
+
+            {{! Language switcher }}
+            {{#if alternative_locales}}
+              <div class="dropdown" data-plugin-dropdown>
+                <a class="btn btn--md btn--text header__nav-btn js-dropdown-open" tabindex="0" role="button" aria-label="Open">
+                  <span>{{current_locale.name}}</span>
+                  <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown__content dropdown__content--xs js-dropdown" role="menu" aria-hidden="true">
+                  {{#each alternative_locales}}
+                    <a href="{{url}}" dir="{{direction}}" class="dropdown__menuitem" rel="nofollow" role="menuitem">
+                      {{name}}
+                    </a>
+                  {{/each}}
+                </div>
+              </div>
+            {{/if}}
+
+            {{#if settings.show_color_mode_switcher}}
+              <a href="#" class="header__color-mode-switcher" data-plugin-color-switcher>
+              <span>
+                <i class="fas fa-sun is-hidden--dark-mode"></i>
+                <i class="fas fa-moon is-hidden--light-mode"></i>
+              </span>
+              </a>
+            {{/if}}
+
+            {{#if settings.show_github_link}}
+              <a href="{{settings.github_url}}" class="header__nav-github" target="_blank" title="Github">
+                <i class="fab fa-github"></i>
+              </a>
+            {{/if}}
+
+          </div>
+        </div>
+      </div>

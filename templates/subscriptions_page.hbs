@@ -1,0 +1,45 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+  {{breadcrumbs}}
+
+  <h1 class="section__title section__title--left">
+    {{t 'my_activities' }}
+  </h1>
+</section>
+
+<ul class="my-activities-menu">
+  {{#if help_center.request_management_enabled}}
+    <li class="my-activities-menu__item">{{link 'requests'}}</li>
+  {{/if}}
+  <li class="my-activities-menu__item">{{link 'contributions'}}</li>
+  <li class="my-activities-menu__item is-active">{{t 'following'}}</li>
+</ul>
+
+{{!-- Content --}}
+<section class="section inner-page">
+  {{#if subscriptions}}
+    <table class="my-activities">
+      <thead>
+      <tr>
+        <td>{{t 'title'}}</td>
+        <td class="my-activities__is-hidden">{{t 'type'}}</td>
+        <td class="my-activities__is-hidden">{{t 'subscription'}}</td>
+        <td class="my-activities__is-hidden"></td>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each subscriptions}}
+        <tr>
+          <td><a href="{{url}}">{{excerpt title characters=60}}</a></td>
+          <td class="meta my-activities__is-hidden">{{name}}</td>
+          <td class="meta my-activities__is-hidden">{{following}}</td>
+          <td class="my-activities__btn my-activities__is-hidden">{{subscribe}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    {{pagination}}
+  {{else}}
+    <p>{{t 'not_following'}}</p>
+  {{/if}}
+</section>

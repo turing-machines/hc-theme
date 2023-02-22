@@ -1,0 +1,45 @@
+{{!-- Page heading --}}
+<section class="section inner-page-heading">
+  {{breadcrumbs}}
+
+  <h1 class="section__title section__title--left">
+    {{t 'my_activities' }}
+  </h1>
+</section>
+
+<ul class="my-activities-menu">
+  {{#if help_center.request_management_enabled}}
+    <li class="my-activities-menu__item">{{link 'requests'}}</li>
+  {{/if}}
+  <li class="my-activities-menu__item is-active">{{t 'contributions'}}</li>
+  <li class="my-activities-menu__item">{{link 'subscriptions'}}</li>
+</ul>
+
+{{!-- Content --}}
+<section class="section inner-page">
+  {{#if contributions}}
+    <table class="my-activities">
+      <thead>
+      <tr>
+        <td>{{t 'title'}}</td>
+        <td class="my-activities__is-hidden">{{t 'vote_sum'}}</td>
+        <td class="my-activities__is-hidden">{{t 'last_activity'}}</td>
+        <td class="my-activities__is-hidden">{{t 'created'}}</td>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each contributions}}
+        <tr>
+          <td><a href="{{url}}">{{excerpt title characters=60}}</a></td>
+          <td class="meta my-activities__is-hidden">{{vote_sum}}</td>
+          <td class="meta my-activities__is-hidden">{{date last_activity_at}}</td>
+          <td class="meta my-activities__is-hidden">{{date created_at}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    {{pagination}}
+  {{else}}
+    <p>{{t 'no_contributions'}}</p>
+  {{/if}}
+</section>
