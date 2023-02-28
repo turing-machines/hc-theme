@@ -2559,3 +2559,37 @@ i.arrow-bottom::before {
   word-wrap: break-word;
   word-break: break-all;
 }
+
+/* Edit on Github Button */
+.edit-on-github{
+  display: inline-flex;
+  border: 2px solid var(--primary-text-color);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  cursor: pointer;
+}
+
+.edit-on-github .icon{
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-on-github .icon svg{
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+
+.edit-on-github  .caption{
+  font-family: var(--text-font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+}

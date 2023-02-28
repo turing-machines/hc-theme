@@ -1,17 +1,31 @@
 {{!-- Page heading --}}
 <section class="section inner-page-heading">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-9">
+
+        <div class="col-12 col-lg-9 breadcrumbs-wrap">
         {{breadcrumbs}}
       </div>
+
       {{#if settings.show_follow_article}}
         <div class="col-12 col-lg-3 subscribe-btn">
           {{subscribe}}
         </div>
       {{/if}}
-<!--       <div class="col-12 col-lg-3">
-  			<a href="" class="edit-on-github" target="_blank">Еdit on Github</a>
-			</div> -->
+
+        <div class="col-12 col-lg-3 edit-on-github-wrapper">
+  			<a href="" class="edit-on-github" target="_blank">
+                <span class="icon">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.9454 3.50457L10.4954 1.05465C10.2559 0.815118 9.86882 0.815118 9.6294 1.05465L1.05444 9.6296C0.939291 9.74414 0.875 9.89969 0.875 10.0626V12.5125C0.875 12.8512 1.14939 13.125 1.48746 13.125H3.93738C4.0997 13.125 4.25587 13.0607 4.3704 12.9456L12.9454 4.3706C13.1849 4.13118 13.1849 3.7441 12.9454 3.50458L12.9454 3.50457ZM3.68397 11.9H2.10007V10.3161L10.0624 2.35379L11.6464 3.93759L3.68397 11.9ZM7.00008 11.9H13.1249V13.125L7.00008 13.1249V11.9Z" fill="#0E0C20"/>
+</svg>
+
+                </span>
+                <span class="caption">
+                Еdit on Github
+                </span>
+            </a>
+        </div>
+
     	<script>
       (()=> {
       	let items = [];
