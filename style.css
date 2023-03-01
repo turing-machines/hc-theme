@@ -2569,6 +2569,7 @@ i.arrow-bottom::before {
   justify-content: center;
   height: 40px;
   cursor: pointer;
+  padding: 0px 16px 0px 16px;
 }
 
 .edit-on-github .icon{
